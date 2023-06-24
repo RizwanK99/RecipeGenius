@@ -16,10 +16,9 @@ public class FiltersFragment extends Fragment {
 
     private FragmentFiltersBinding binding;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        FiltersViewModel filtersViewModel =
-                new ViewModelProvider(this).get(FiltersViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        FiltersViewModel filtersViewModel = new ViewModelProvider(this).get(FiltersViewModel.class);
 
         binding = FragmentFiltersBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
