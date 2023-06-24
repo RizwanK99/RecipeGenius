@@ -1,53 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.filters.FiltersFragment">
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/Option1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="left"
+        android:padding="15dp"
+        android:orientation="vertical"
+        tools:context=".ui.filters.FiltersFragment">
 
-    <TextView
-        android:id="@+id/text_filters"
-        android:layout_width="175dp"
-        android:layout_height="118dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.199"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.132" />
+        <TextView
+            android:id="@+id/text_filters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Dietary Restrictions"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vegan"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Vegan"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vegetarian"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Vegetarian"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Keto"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Keto"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paleo"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Paleo"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gluten-Free"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Glutenfree"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pescatarian"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Pescatarian"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Low FODMAP"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Fodmap"/>
 
-    <TextView
-        android:id="@+id/diet_filters"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="112dp" />
+        <TextView
+            android:id="@+id/text_filters2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Allergy Information"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lactose/Milk"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Milk"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eggs"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Eggs"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Peanuts"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Peanuts"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tree Nuts"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Treenuts"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fish"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Fish"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shellfish"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Shellfish"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wheat"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Wheat"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Corn"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Corn"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sesama"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Sesama"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coconut"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Coconut"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Almond"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Almond"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chia"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Chia"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stevia"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Stevia"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Melon"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Melon"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tomato"
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Tomato"/>
+<!--        Add ur text from this point onwards. Leave the last checkbox at the very end since we need padding to see-->
+<!--        the last checkbox-->
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Padding since last checkbox doesnt show "
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/Padding"/>
+    </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/checkBox1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="151dp" />
-
-    <TextView
-        android:id="@+id/allergy_filters"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="237dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="272dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+
+
