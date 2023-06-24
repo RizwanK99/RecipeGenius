@@ -27,12 +27,20 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        Button button = (Button) root.findViewById(R.id.editFiltersButton);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button recipebutton = (Button) root.findViewById(R.id.myRecipesButton);
+        recipebutton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.navigation_my_recipes);
+            }
+        });
+
+        Button filterbutton = (Button) root.findViewById(R.id.editFiltersButton);
+        filterbutton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.navigation_filters);
             }
         });
+        
 
 
         final TextView textView = binding.textHome;
