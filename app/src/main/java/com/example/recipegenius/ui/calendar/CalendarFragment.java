@@ -13,22 +13,22 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.recipegenius.R;
-import com.example.recipegenius.databinding.FragmentHomeBinding;
+import com.example.recipegenius.databinding.FragmentCalendarBinding;
 
 
 public class CalendarFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentCalendarBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         CalendarViewModel homeViewModel =
                 new ViewModelProvider(this).get(CalendarViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentCalendarBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
+        final TextView textView = binding.textCalendar;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
