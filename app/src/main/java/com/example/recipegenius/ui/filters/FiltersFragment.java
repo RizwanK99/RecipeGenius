@@ -18,14 +18,14 @@ public class FiltersFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        FiltersViewModel notificationsViewModel =
+        FiltersViewModel filtersViewModel =
                 new ViewModelProvider(this).get(FiltersViewModel.class);
 
         binding = FragmentFiltersBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textFilters;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        filtersViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
