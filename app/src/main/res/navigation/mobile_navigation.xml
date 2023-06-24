@@ -27,5 +27,5 @@
         android:id="@+id/filter_page"
         android:name="com.example.recipegenius.ui.filters.FiltersFragment"
         android:label="@string/title_filters"
-        tools:layout="@layout/filters" />
+        tools:layout="@layout/fragment_filters" />
 </navigation>
