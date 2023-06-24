@@ -72,7 +72,10 @@
             android:layout_gravity="left"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:id="@+id/Fodmap"/>
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left" />
         <TextView
             android:id="@+id/text_filters2"
             android:layout_width="wrap_content"
@@ -139,10 +142,10 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sesama"
+            android:text="Sesame"
             android:layout_gravity="left"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:id="@+id/Sesama"/>
+            android:id="@+id/Sesame"/>
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -185,18 +188,23 @@
             android:layout_gravity="left"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:id="@+id/Tomato"/>
-<!--        Add ur text from this point onwards. Leave the last checkbox at the very end since we need padding to see-->
-<!--        the last checkbox-->
+        <!--        Add ur text from this point onwards. Leave the last checkbox at the very end since we need padding to see-->
+        <!--        the last checkbox-->
+        <Button
+            android:id="@+id/applyFiltersButton"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Apply Filters"/>
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Padding since last checkbox doesnt show "
+            android:text=""
             android:layout_gravity="left"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:id="@+id/Padding"/>
     </LinearLayout>
-
-
 
 
 </ScrollView>

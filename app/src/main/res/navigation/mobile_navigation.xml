@@ -23,6 +23,12 @@
         android:label="@string/title_myRecipes"
         tools:layout="@layout/fragment_myrecipes" />
 
+    <fragment
+        android:id="@+id/navigation_todays_picks"
+        android:name="com.example.recipegenius.ui.todayspicks.TodaysPicksFragment"
+        android:label="@string/title_todaysPicks"
+        tools:layout="@layout/fragment_todayspicks" />
+
     <navigation android:id="@+id/navigation_top_home"
         app:startDestination="@id/navigation_home">
         <fragment
