@@ -1,20 +1,22 @@
-package com.example.recipegenius.ui.dashboard;
+package com.example.recipegenius.ui.calendar;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class CalendarViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public CalendarViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
-        mText.setValue("Rizwan was here.");
+        mText.setValue("Welcome");
     }
 
     public LiveData<String> getText() {
         return mText;
     }
+
+
+
 }

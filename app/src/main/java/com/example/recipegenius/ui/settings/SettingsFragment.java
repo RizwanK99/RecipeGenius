@@ -1,13 +1,11 @@
-package com.example.recipegenius.ui.home;
+package com.example.recipegenius.ui.settings;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -15,32 +13,22 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.recipegenius.R;
-import com.example.recipegenius.databinding.FragmentHomeBinding;
+import com.example.recipegenius.databinding.FragmentSettingsBinding;
 
 
+public class SettingsFragment extends Fragment {
 
-public class HomeFragment extends Fragment {
-
-    private FragmentHomeBinding binding;
+    private FragmentSettingsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        SettingsViewModel homeViewModel =
+                new ViewModelProvider(this).get(SettingsViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentSettingsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        Button button = (Button) root.findViewById(R.id.editFiltersButton);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.navigation_filters);
-
-            }
-        });
-
-
-        final TextView textView = binding.textHome;
+        final TextView textView = binding.textSettings;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }

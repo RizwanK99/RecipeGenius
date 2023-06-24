@@ -1,13 +1,11 @@
-package com.example.recipegenius.ui.home;
+package com.example.recipegenius.ui.calendar;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -18,27 +16,17 @@ import com.example.recipegenius.R;
 import com.example.recipegenius.databinding.FragmentHomeBinding;
 
 
-
-public class HomeFragment extends Fragment {
+public class CalendarFragment extends Fragment {
 
     private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        CalendarViewModel homeViewModel =
+                new ViewModelProvider(this).get(CalendarViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        Button button = (Button) root.findViewById(R.id.editFiltersButton);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.navigation_filters);
-
-            }
-        });
-
 
         final TextView textView = binding.textHome;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);

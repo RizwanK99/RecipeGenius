@@ -12,20 +12,26 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.recipegenius.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_calendar"
+        android:name="com.example.recipegenius.ui.calendar.CalendarFragment"
+        android:label="@string/title_calendar"
+        tools:layout="@layout/fragment_calendar" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.recipegenius.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_settings"
+        android:name="com.example.recipegenius.ui.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings" />
 
     <fragment
-        android:id="@+id/filter_page"
+        android:id="@+id/navigation_filters"
         android:name="com.example.recipegenius.ui.filters.FiltersFragment"
         android:label="@string/title_filters"
         tools:layout="@layout/fragment_filters" />
+
+    <fragment
+        android:id="@+id/navigation_my_recipes"
+        android:name="com.example.recipegenius.ui.myrecipes.MyRecipesFragment"
+        android:label="@string/title_myRecipes"
+        tools:layout="@layout/fragment_myrecipes" />
 </navigation>
