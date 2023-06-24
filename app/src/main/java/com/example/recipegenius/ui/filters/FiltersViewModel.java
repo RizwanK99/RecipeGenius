@@ -1,22 +1,19 @@
-package com.example.recipegenius.ui.home;
+package com.example.recipegenius.ui.filters;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class FiltersViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public FiltersViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Welcome");
+        mText.setValue("This is notifications fragment");
     }
 
     public LiveData<String> getText() {
         return mText;
     }
-
-
-
 }

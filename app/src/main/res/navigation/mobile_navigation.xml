@@ -22,4 +22,10 @@
         android:name="com.example.recipegenius.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/filter_page"
+        android:name="com.example.recipegenius.ui.filters.FiltersFragment"
+        android:label="@string/title_filters"
+        tools:layout="@layout/filters" />
 </navigation>
