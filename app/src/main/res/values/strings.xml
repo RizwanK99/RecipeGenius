@@ -3,6 +3,6 @@
     <string name="title_home">Home</string>
     <string name="title_calendar">Calendar</string>
     <string name="title_settings">Settings</string>
-    <string name="title_filters"> Filters </string>
-    <string name="title_myRecipes"> MyRecipes </string>
+    <string name="title_filters">Filters</string>
+    <string name="title_myRecipes">MyRecipes</string>
 </resources>
