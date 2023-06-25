@@ -36,7 +36,7 @@
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:id="@+id/Vegan"
-                android:checked="@={viewModel.filters[viewModel.VEGAN]}"/>
+                android:checked="@={viewModel.restrictions_filters[viewModel.VEGAN]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:id="@+id/Vegetarian"
-                android:checked="@={viewModel.filters[viewModel.VEGETARIAN]}"/>
+                android:checked="@={viewModel.restrictions_filters[viewModel.VEGETARIAN]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:id="@+id/Keto"
-                android:checked="@={viewModel.filters[viewModel.KETO]}"/>
+                android:checked="@={viewModel.restrictions_filters[viewModel.KETO]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:id="@+id/Paleo"
-                android:checked="@={viewModel.filters[viewModel.PALEO]}"/>
+                android:checked="@={viewModel.restrictions_filters[viewModel.PALEO]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:id="@+id/Glutenfree"
-                android:checked="@={viewModel.filters[viewModel.GLUTEN_FREE]}"/>
+                android:checked="@={viewModel.restrictions_filters[viewModel.GLUTEN_FREE]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:id="@+id/Pescatarian"
-                android:checked="@={viewModel.filters[viewModel.PESCATARIAN]}"/>
+                android:checked="@={viewModel.restrictions_filters[viewModel.PESCATARIAN]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:id="@+id/Fodmap"
-                android:checked="@={viewModel.filters[viewModel.FODMAP]}"/>
+                android:checked="@={viewModel.restrictions_filters[viewModel.FODMAP]}"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -103,105 +103,120 @@
                 android:text="Lactose/Milk"
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/Milk"/>
+                android:id="@+id/Milk"
+                android:checked="@={viewModel.allergy_filters[viewModel.LACTOSE]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Eggs"
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/Eggs"/>
+                android:id="@+id/Eggs"
+                android:checked="@={viewModel.allergy_filters[viewModel.EGGS]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Peanuts"
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/Peanuts"/>
+                android:id="@+id/Peanuts"
+                android:checked="@={viewModel.allergy_filters[viewModel.PEANUTS]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tree Nuts"
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/Treenuts"/>
+                android:id="@+id/Treenuts"
+                android:checked="@={viewModel.allergy_filters[viewModel.TREE_NUTS]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fish"
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/Fish"/>
+                android:id="@+id/Fish"
+                android:checked="@={viewModel.allergy_filters[viewModel.FISH]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Shellfish"
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/Shellfish"/>
+                android:id="@+id/Shellfish"
+                android:checked="@={viewModel.allergy_filters[viewModel.SHELLFISH]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Wheat"
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/Wheat"/>
+                android:id="@+id/Wheat"
+                android:checked="@={viewModel.allergy_filters[viewModel.WHEAT]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Corn"
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/Corn"/>
+                android:id="@+id/Corn"
+                android:checked="@={viewModel.allergy_filters[viewModel.CORN]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sesame"
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/Sesame"/>
+                android:id="@+id/Sesame"
+                android:checked="@={viewModel.allergy_filters[viewModel.SESAME]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Coconut"
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/Coconut"/>
+                android:id="@+id/Coconut"
+                android:checked="@={viewModel.allergy_filters[viewModel.COCONUT]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Almond"
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/Almond"/>
+                android:id="@+id/Almond"
+                android:checked="@={viewModel.allergy_filters[viewModel.ALMOND]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Chia"
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/Chia"/>
+                android:id="@+id/Chia"
+                android:checked="@={viewModel.allergy_filters[viewModel.CHIA]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Stevia"
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/Stevia"/>
+                android:id="@+id/Stevia"
+                android:checked="@={viewModel.allergy_filters[viewModel.STEVIA]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Melon"
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/Melon"/>
+                android:id="@+id/Melon"
+                android:checked="@={viewModel.allergy_filters[viewModel.MELON]}"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tomato"
                 android:layout_gravity="left"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/Tomato"/>
+                android:id="@+id/Tomato"
+                android:checked="@={viewModel.allergy_filters[viewModel.TOMATO]}"/>
             <Button
                 android:id="@+id/applyFiltersButton"
                 android:layout_width="match_parent"
