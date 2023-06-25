@@ -4,13 +4,15 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.util.Map;
+
 public class FiltersViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
+    public Map<String, Boolean> filters;
 
     public FiltersViewModel() {
         mText = new MutableLiveData<>();
-//        mText.setValue("This is filters fragment");
     }
 
     public LiveData<String> getText() {
