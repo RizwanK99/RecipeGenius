@@ -25,8 +25,6 @@ public class TodaysPicksFragment extends Fragment {
         binding = FragmentTodayspicksBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textTodaysPicks;
-        todaysPicksViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
