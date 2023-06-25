@@ -57,8 +57,8 @@ public class MyRecipesFragment extends Fragment {
         // TextView recipe3 = root.findViewById(R.id.recipe3);
         // recipe3.setText(recipes[2].getName());
 
-        final TextView textView = binding.textMyRecipes;
-        myRecipesViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        //final TextView textView = binding.textMyRecipes;
+        //myRecipesViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
