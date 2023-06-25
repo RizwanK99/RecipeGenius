@@ -36,8 +36,8 @@
                     android:gravity="center"
                     android:text="Burgers w/ Fries"
                     android:textAlignment="center"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
-                    android:textStyle="bold"
                     tools:text="Burgers w/ Fries"
                     tools:textAlignment="center" />
 
@@ -72,8 +72,8 @@
                 android:gravity="center"
                 android:text="Yucatan Salad Bowl"
                 android:textAlignment="center"
+                android:textColor="#FFFFFF"
                 android:textSize="24sp"
-                android:textStyle="bold"
                 tools:text="Yucatan Salad Bowl"
                 tools:textAlignment="center" />
 
@@ -99,8 +99,8 @@
                 android:gravity="center"
                 android:text="Short Rib w/ Rice"
                 android:textAlignment="center"
+                android:textColor="#FFFFFF"
                 android:textSize="24sp"
-                android:textStyle="bold"
                 tools:text="Short Rib w/ Rice"
                 tools:textAlignment="center" />
 
