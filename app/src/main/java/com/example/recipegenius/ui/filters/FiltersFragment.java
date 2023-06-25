@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import com.example.recipegenius.databinding.FragmentFiltersBinding;
 public class FiltersFragment extends Fragment {
 
     private FragmentFiltersBinding binding;
+    private FiltersViewModel mViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -23,8 +25,8 @@ public class FiltersFragment extends Fragment {
         binding = FragmentFiltersBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textFilters;
-        filtersViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        binding.setViewModel(filtersViewModel);
+
         return root;
     }
 
