@@ -34,6 +34,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        Button picksbutton = (Button) root.findViewById(R.id.todaysPicksButton);
+        picksbutton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.navigation_todays_picks);
+            }
+        });
+
         Button filterbutton = (Button) root.findViewById(R.id.editFiltersButton);
         filterbutton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
