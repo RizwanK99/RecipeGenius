@@ -190,8 +190,8 @@
             android:layout_gravity="left"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:id="@+id/Tomato"/>
-<!--        Add ur text from this point onwards. Leave the last checkbox at the very end since we need padding to see-->
-<!--        the last checkbox-->
+        <!--        Add ur text from this point onwards. Leave the last checkbox at the very end since we need padding to see-->
+        <!--        the last checkbox-->
         <Button
             android:id="@+id/applyFiltersButton"
             android:layout_width="match_parent"
