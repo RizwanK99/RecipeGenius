@@ -17,6 +17,12 @@ import androidx.navigation.Navigation;
 import com.example.recipegenius.R;
 import com.example.recipegenius.databinding.FragmentFiltersBinding;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Map;
 
 public class FiltersFragment extends Fragment {
@@ -51,6 +57,24 @@ public class FiltersFragment extends Fragment {
                 }
                 editor.apply();
 
+                //TODO: change Keto to Ketogenic for API
+                //API test
+//                Map<String, ?> dietMap = dietFilters.getAll();
+//                ArrayList<String> trueDietFilters = new ArrayList<String>();
+//                for (Map.Entry<String, ?> entry : dietMap.entrySet()) {
+//                    if ((Boolean)entry.getValue() == true)
+//                        trueDietFilters.add(entry.getKey());
+//                }
+//                //TODO: Async Task
+//                String url = "https://api.spoonacular.com/recipes/complexSearch?excludeCuisine=" + String.join(",", trueDietFilters);
+//                try {
+//                    getRequest(url);
+//                } catch (IOException e) {
+//                    throw new RuntimeException(e);
+//                }
+//                System.out.println(url);
+
+
                 editor = allergyFilters.edit();
                 for (Map.Entry<String,Boolean> f: filtersViewModel.allergy_filters.entrySet()) {
                     editor.putBoolean(f.getKey(), f.getValue());
@@ -69,5 +93,17 @@ public class FiltersFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private static void getRequest(String url) throws IOException {
+        URL getURL = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) getURL.openConnection();
+        con.setRequestMethod("GET");
+        con.setRequestProperty("Content-Type", "application/json");
+        //TODO: better API key implementation
+        con.setRequestProperty("x-api-key", "ebe7fae3f40b431dab2335358eab0c38");
+        if (con.getResponseCode() == HttpURLConnection.HTTP_OK) {
+            System.out.println("OK");
+        }
     }
 }
