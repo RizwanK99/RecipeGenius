@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences dietFilters = context.getSharedPreferences("dietFilters", Context.MODE_PRIVATE);
         SharedPreferences allergyFilters = context.getSharedPreferences("allergyFilters", Context.MODE_PRIVATE);
 
-
     }
 
     @Override
