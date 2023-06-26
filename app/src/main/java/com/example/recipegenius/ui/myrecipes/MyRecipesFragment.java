@@ -83,34 +83,32 @@ public class MyRecipesFragment extends Fragment {
         Map<String, Boolean> allergyFilters = (Map<String, Boolean>) getActivity().getSharedPreferences("allergyFilters", Context.MODE_PRIVATE).getAll();
 
         // filter recipes based on diet and allergy filters
-       /* for (Map.Entry<String, Boolean> entry : dietFilters.entrySet()) {
-            if (entry.getValue()) {
-                for (int i = 0; i < recipeList.size(); i++) {
-                    String[] tagsList = recipeList.get(i).getTags();
-                    Boolean rizwank = false;
-                    for (int j = 0; j < tagsList.length; j++) {
-                        if (tagsList[j].equalsIgnoreCase(entry.getKey())) {
-                            rizwank = true;
-                        }
-                    }
-                    if (!rizwank) {
-                        recipeList.remove(i);
-                        i--;
-                    }
+        int i = 0;
+        while(i<recipeList.size()-1) {
+            String[] tagsList = recipeList.get(i).getTags();
+            Boolean rizwank = false;
+            for (String ing : tagsList) {
+                if (dietFilters.containsKey(ing) && dietFilters.get(ing) == true) {
+                    rizwank = true;
                 }
             }
-        }*/
-        int i = 0;
-                while(i < recipeList.size()-1) {
-                    String[] ingredientsList = recipeList.get(i).getIngredients();
-                    for (int j = 0; j < ingredientsList.length; j++) {
-                        if (allergyFilters.containsKey(ingredientsList[j]) && allergyFilters.get(ingredientsList[j]) == true) {
-                            recipeList.remove(i);
-                            i--;
-                            break;
-                        }
-                    }
-                    i++;
+            if (!rizwank) {
+                recipeList.remove(i);
+                i--;
+            }
+            i++;
+        }
+        i = 0;
+        while(i < recipeList.size()-1) {
+            String[] ingredientsList = recipeList.get(i).getIngredients();
+            for (int j = 0; j < ingredientsList.length; j++) {
+                if (allergyFilters.containsKey(ingredientsList[j]) && allergyFilters.get(ingredientsList[j]) == true) {
+                    recipeList.remove(i);
+                    i--;
+                    break;
+                }
+            }
+            i++;
         }
 
         //final TextView textView = binding.textMyRecipes;
