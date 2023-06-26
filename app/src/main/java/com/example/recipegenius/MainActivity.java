@@ -1,10 +1,17 @@
 package com.example.recipegenius;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+// import androidx.datastore.preferences.core.Preferences;
+// import androidx.datastore.preferences.rxjava2.RxPreferenceDataStoreBuilder;
+// import androidx.datastore.rxjava2.RxDataStore;
+
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -15,6 +22,7 @@ import com.example.recipegenius.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    // public RxDataStore<Preferences> dataStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        // dataStore = new RxPreferenceDataStoreBuilder(this, "filters").build();
+        Context context = this;
+        SharedPreferences dietFilters = context.getSharedPreferences("dietFilters", Context.MODE_PRIVATE);
+        SharedPreferences allergyFilters = context.getSharedPreferences("allergyFilters", Context.MODE_PRIVATE);
+
     }
 
     @Override

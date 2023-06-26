@@ -1,5 +1,7 @@
 package com.example.recipegenius.ui.filters;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.View;
 
 import androidx.lifecycle.LiveData;
@@ -48,6 +50,7 @@ public class FiltersViewModel extends ViewModel {
         allergy_filters.put(PEANUTS, true);
         allergy_filters.put(SHELLFISH, true);
     }
+
     public LiveData<String> getText() {
         return mText;
     }
