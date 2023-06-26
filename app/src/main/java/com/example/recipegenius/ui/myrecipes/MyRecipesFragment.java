@@ -55,6 +55,13 @@ public class MyRecipesFragment extends Fragment {
         String[] tags3 = {"bread", "dairy"};
         recipeList.add(new RecipeObject("Grilled Cheese Sandwich", ingredients3, tags3));
 
+        recipeList.add(new RecipeObject("Peanut Butter and Jelly", ingredients, tags));
+        recipeList.add(new RecipeObject("Spaghetti and Meatballs", ingredients2, tags2));
+        recipeList.add(new RecipeObject("Grilled Cheese Sandwich", ingredients3, tags3));
+        recipeList.add(new RecipeObject("Peanut Butter and Jelly", ingredients, tags));
+        recipeList.add(new RecipeObject("Spaghetti and Meatballs", ingredients2, tags2));
+        recipeList.add(new RecipeObject("Grilled Cheese Sandwich", ingredients3, tags3));
+
 
         //final TextView textView = binding.textMyRecipes;
         //myRecipesViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
