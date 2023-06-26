@@ -1,4 +1,7 @@
 package com.example.recipegenius.ui.myrecipes;
+
+import java.util.Collection;
+
 public class RecipeObject {
     String name;
     String[] ingredients;
@@ -10,5 +13,9 @@ public class RecipeObject {
         this.name = name;
         this.ingredients = ingredients;
         this.tags = tags;
+    }
+
+    public String[] getTags() {
+        return this.tags;
     }
 }
