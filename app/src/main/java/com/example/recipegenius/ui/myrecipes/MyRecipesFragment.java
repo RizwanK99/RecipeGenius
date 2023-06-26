@@ -39,7 +39,7 @@ public class MyRecipesFragment extends Fragment {
 
         // create fake data of recipe objects
 
-        String[] ingredients = {"peanut butter", "jelly", "bread"};
+        String[] ingredients = {"peanut butter", "peanuts", "jelly", "bread"};
         String[] instructions = {"spread peanut butter on one slice of bread", "spread jelly on the other slice of bread", "put the two slices of bread together"};
         String[] tags = {"nuts", "gluten", "fruit"};
         recipeList.add(new RecipeObject("Peanut Butter and Jelly", ingredients, tags));
@@ -68,7 +68,7 @@ public class MyRecipesFragment extends Fragment {
         recipeList.add(new RecipeObject(name5, ingredients5, tags5));
 
         String name6 = "Chocolate Chip Cookies";
-        String[] ingredients6 = {"flour", "sugar", "butter", "chocolate chips"};
+        String[] ingredients6 = {"flour", "sugar", "butter", "chocolate chips", "peanuts"};
         // String[] instructions6 = {"mix flour, sugar, and butter together", "add chocolate chips to the mixture", "bake the cookies in the oven"};
         String[] tags6 = {"gluten", "dairy"};
         recipeList.add(new RecipeObject(name6, ingredients6, tags6));
@@ -96,6 +96,20 @@ public class MyRecipesFragment extends Fragment {
                     if (!rizwank) {
                         recipeList.remove(i);
                         i--;
+                    }
+                }
+            }
+        }
+        for (Map.Entry<String, Boolean> entry : allergyFilters.entrySet()) {
+            if (entry.getValue()) {
+                for (int i = 0; i < recipeList.size(); i++) {
+                    String[] ingredientsList = recipeList.get(i).getIngredients();
+                    for (int j = 0; j < ingredientsList.length; j++) {
+                        if (ingredientsList[j].equalsIgnoreCase(entry.getKey())) {
+                            recipeList.remove(i);
+                            i--;
+                            break;
+                        }
                     }
                 }
             }
