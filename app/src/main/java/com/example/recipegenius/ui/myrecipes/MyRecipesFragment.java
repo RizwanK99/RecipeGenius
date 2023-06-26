@@ -89,7 +89,7 @@ public class MyRecipesFragment extends Fragment {
             found |= dietFilters.get(key);
         }
         // skip the filter if no diets applied
-        while(i<recipeList.size()-1 && found) {
+        while(i<recipeList.size() && found) {
             String[] tagsList = recipeList.get(i).getTags();
             Boolean rizwank = false;
 
@@ -105,7 +105,7 @@ public class MyRecipesFragment extends Fragment {
             i++;
         }
         i = 0;
-        while(i < recipeList.size()-1 && allergyFilters.size() > 0) {
+        while(i < recipeList.size() && allergyFilters.size() > 0) {
             String[] ingredientsList = recipeList.get(i).getIngredients();
             for (String ing : ingredientsList) {
                 if (allergyFilters.containsKey(ing) && allergyFilters.get(ing) == true) {
