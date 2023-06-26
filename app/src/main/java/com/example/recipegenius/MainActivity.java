@@ -2,8 +2,11 @@ package com.example.recipegenius;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
+import com.example.recipegenius.database.DBHandler;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,10 +22,13 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.recipegenius.databinding.ActivityMainBinding;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    // public RxDataStore<Preferences> dataStore;
+    private DBHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +52,28 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences dietFilters = context.getSharedPreferences("dietFilters", Context.MODE_PRIVATE);
         SharedPreferences allergyFilters = context.getSharedPreferences("allergyFilters", Context.MODE_PRIVATE);
 
+        dbHandler = new DBHandler(MainActivity.this);
+        Cursor cursor = dbHandler.getReadableDatabase().query("dietFilters", new String[] {"name"},  null, null, null, null, null, "100");
+        dbHandler.insertRow("Vegan");
+        dbHandler.insertRow("Vegetarian");
+        dbHandler.insertRow("Keto");
+        dbHandler.insertRow("Paleo");
+        dbHandler.insertRow("Gluten-Free");
+        dbHandler.insertRow("Pescatarian");
+        dbHandler.insertRow("Low FODMAP");
+
+        // see DB contents
+        System.out.println(cursor.getCount());
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                do
+                {
+                    String name = cursor.getString(0);
+                    System.out.println(name);
+                } while (cursor.moveToNext());
+            }
+            cursor.close();
+        }
     }
 
     @Override
