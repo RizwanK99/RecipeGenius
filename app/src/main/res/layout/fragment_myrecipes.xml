@@ -8,139 +8,29 @@
     android:visibility="visible"
     tools:visibility="visible">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:text="Your Current Recipes"
-            android:textAlignment="center"
-            android:textSize="24sp" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="#EC4B40"
-            android:visibility="visible"
-            app:cardCornerRadius="20dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#EC4B40"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center"
-                    android:text="Burgers w/ Fries"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    tools:text="Burgers w/ Fries"
-                    tools:textAlignment="center" />
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:visibility="visible"
-                    tools:src="@tools:sample/avatars" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="#E67A7A"
-            android:visibility="visible"
-            app:cardCornerRadius="20dp">
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#EC4B40"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="Yucatan Salad Bowl"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                tools:text="Yucatan Salad Bowl"
-                tools:textAlignment="center" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="#E67A7A"
-            android:visibility="visible"
-            app:cardCornerRadius="20dp">
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#EC4B40"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="Short Rib w/ Rice"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                tools:text="Short Rib w/ Rice"
-                tools:textAlignment="center" />
-
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
-    =======
-
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="56dp"
-        android:background="#FFFFFF"
-        tools:context=".exam">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:nestedScrollingEnabled="false"
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:overScrollMode="never"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-    </ScrollView>
+    <ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent"
+    android:background="#FFFFFF" 
+    tools:context=".exam" > 
+  
+    <LinearLayout 
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+        android:orientation="vertical"
+        android:layout_gravity="left" >
+  
+        <androidx.recyclerview.widget.RecyclerView
+            android:nestedScrollingEnabled="false" 
+            android:id="@+id/recyclerView" 
+            android:layout_width="match_parent" 
+            android:overScrollMode="never" 
+            android:layout_height="wrap_content"/> 
+  
+    </LinearLayout> 
+</ScrollView>
 
 </RelativeLayout>

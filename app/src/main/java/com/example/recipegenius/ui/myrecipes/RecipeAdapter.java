@@ -52,8 +52,17 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
         viewHolder.recipeName
                 .setText(list.get(position).name);
         // change ingredients and tags from array to single string
-        String ingredients = list.get(position).ingredients[0];
-        String tags = list.get(position).tags[0];
+
+        String ingredients = "Ingrediants: ";
+        if (list.get(position).ingredients.length > 0){
+            ingredients += list.get(position).ingredients[0];
+        }
+
+        String tags = "Tags: ";
+        if (list.get(position).tags.length > 0){
+            tags += list.get(position).tags[0];
+        }
+
 
         for (int i = 1; i < list.get(position).ingredients.length; i++) {
             ingredients = ingredients + ", " + list.get(position).ingredients[i];
