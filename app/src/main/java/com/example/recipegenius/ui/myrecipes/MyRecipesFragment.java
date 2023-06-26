@@ -39,46 +39,44 @@ public class MyRecipesFragment extends Fragment {
 
         // create fake data of recipe objects
 
-        String name1 = "Fish and Chips";
-        String[] ingredients1 = {"fish", "potatoes", "salt", "pepper", "oil", "flour"};
-        // String[] instructions1 = {"heat up oil in a pan", "cook fish in pan", "cut potatoes into strips", "fry potatoes in oil"};
-        String[] tags1 = {"pescatarian"};
-        recipeList.add(new RecipeObject(name1, ingredients1, tags1));
-
-        String name2 = "Spaghetti and Meatballs";
-        String[] ingredients2 = {"pasta", "tomato sauce", "meatballs"};
-        // String[] instructions2 = {"boil water", "cook pasta in boiling water", "heat up tomato sauce", "cook meatballs", "put pasta, tomato sauce, and meatballs together"};
-        String[] tags2 = {"glutenFree"};
-        recipeList.add(new RecipeObject(name2, ingredients2, tags2));
-
-        String name3 = "Grilled Cheese Sandwich";
-        String[] ingredients3 = {"bread", "cheese", "butter"};
-        // String[] instructions3 = {"spread butter on one side of each slice of bread", "put cheese between the two slices of bread", "cook the sandwich on a pan"};
-        String[] tags3 = {"lactose", "vegetarian", "pescatarian"};
-        recipeList.add(new RecipeObject(name3, ingredients3, tags3));
+        String[] ingredients = {"Peanut Butter", "Peanuts", "Jelly", "Bread"};
+        String[] instructions = {"spread peanut butter on one slice of bread", "spread jelly on the other slice of bread", "put the two slices of bread together"};
+        String[] tags = {"Nuts", "Gluten", "Fruit"};
+        recipeList.add(new RecipeObject("Peanut Butter and Jelly", ingredients, tags));
+//        recipeList.add(new RecipeObject("Peanut Butter and Jelly", ingredients, instructions, tags));
+//
+        String[] ingredients2 = {"Pasta", "Tomato Sauce", "Meatballs"};
+//        String[] instructions2 = {"boil water", "cook pasta in boiling water", "heat up tomato sauce", "cook meatballs", "put pasta, tomato sauce, and meatballs together"};
+        String[] tags2 = {"Pasta", "Tomato", "Meat"};
+        recipeList.add(new RecipeObject("Spaghetti and Meatballs", ingredients2, tags2));
+//
+        String[] ingredients3 = {"Bread", "Cheese", "Butter"};
+//        String[] instructions3 = {"spread butter on one side of each slice of bread", "put cheese between the two slices of bread", "cook the sandwich on a pan"};
+        String[] tags3 = {"Bread", "Vegan"};
+        recipeList.add(new RecipeObject("Grilled Cheese Sandwich", ingredients3, tags3));
 
         String name4 = "Tomato Soup";
-        String[] ingredients4 = {"tomatoes", "water", "salt", "pepper"};
+        String[] ingredients4 = {"Tomatoes", "Water", "Salt", "Pepper"};
         // String[] instructions4 = {"boil water", "add tomatoes to boiling water", "add salt and pepper to taste"};
-        String[] tags4 = {"vegan", "vegetarian", "glutenfree", "pescatarian"};
-        recipeList.add(new RecipeObject(name4, ingredients4, tags4));
+        String[] tags4 = {"Vegan", "Vegetarian", "Gluten-Free"};
+        recipeList.add(new RecipeObject(name4, ingredients3, tags3));
 
         String name5 = "Fried Chicken";
-        String[] ingredients5 = {"chicken", "flour", "salt", "pepper", "oil"};
+        String[] ingredients5 = {"Chicken", "Flour", "Salt", "Pepper", "Oil"};
         // String[] instructions5 = {"heat up oil in a pan", "coat chicken in flour, salt, and pepper", "cook chicken in pan"};
-        String[] tags5 = {};
+        String[] tags5 = {"Meat", "Gluten"};
         recipeList.add(new RecipeObject(name5, ingredients5, tags5));
 
         String name6 = "Chocolate Chip Cookies";
-        String[] ingredients6 = {"flour", "sugar", "butter", "chocolate chips"};
+        String[] ingredients6 = {"Flour", "Sugar", "Butter", "Chocolate Chips", "Peanuts"};
         // String[] instructions6 = {"mix flour, sugar, and butter together", "add chocolate chips to the mixture", "bake the cookies in the oven"};
-        String[] tags6 = {"vegetarian", "pescatarian"};
+        String[] tags6 = {"Gluten", "Dairy"};
         recipeList.add(new RecipeObject(name6, ingredients6, tags6));
 
         String name7 = "Steak Frites";
-        String[] ingredients7 = {"steak", "potatoes", "salt", "pepper", "oil"};
+        String[] ingredients7 = {"Steak", "Potatoes", "Salt", "Pepper", "Oil"};
         // String[] instructions7 = {"heat up oil in a pan", "cook steak in pan", "cut potatoes into strips", "fry potatoes in oil"};
-        String[] tags7 = {"glutenFree"};
+        String[] tags7 = {"Meat", "Gluten"};
         recipeList.add(new RecipeObject(name7, ingredients7, tags7));
 
         String name8 = "Peanut Butter Cookies";
@@ -122,46 +120,38 @@ public class MyRecipesFragment extends Fragment {
         Map<String, Boolean> allergyFilters = (Map<String, Boolean>) getActivity().getSharedPreferences("allergyFilters", Context.MODE_PRIVATE).getAll();
 
         // filter recipes based on diet and allergy filters
-        for (Map.Entry<String, Boolean> entry : dietFilters.entrySet()) {
-            if (entry.getValue()) {
-
-                for (int i = 0; i < recipeList.size(); i++) {
-                    String[] tagsList = recipeList.get(i).getTags();
-                    Boolean rizwank = false;
-                    for (int j = 0; j < tagsList.length; j++) {
-                        if (tagsList[j].equalsIgnoreCase(entry.getKey())) {
-                            rizwank = true;
-                        }
-                    }
-                    if (!rizwank) {
-                        recipeList.remove(i);
-                        i--;
-                        if (i >= recipeList.size()){
-                            break;
-                        }
-
-                    }
-                }
-            }
+        int i = 0;
+        boolean found = false;
+        for(String key : dietFilters.keySet()){
+            found |= dietFilters.get(key);
         }
+        // skip the filter if no diets applied
+        while(i<recipeList.size() && found) {
+            String[] tagsList = recipeList.get(i).getTags();
+            Boolean rizwank = false;
 
-
-
-        for (Map.Entry<String, Boolean> entry : allergyFilters.entrySet()) {
-            if (entry.getValue()) {
-                int i = 0;
-                while (i < recipeList.size()){
-                    String[] ingredientsList = recipeList.get(i).getIngredients();
-                    for (int j = 0; j < ingredientsList.length; j++) {
-                        if (ingredientsList[j].equalsIgnoreCase(entry.getKey())) {
-                            recipeList.remove(i);
-                            i--;
-                            break;
-                        }
-                    }
-                    i++;
+            for (String ing : tagsList) {
+                if (dietFilters.containsKey(ing) && dietFilters.get(ing) == true) {
+                    rizwank = true;
                 }
             }
+            if (!rizwank) {
+                recipeList.remove(i);
+                i--;
+            }
+            i++;
+        }
+        i = 0;
+        while(i < recipeList.size() && allergyFilters.size() > 0) {
+            String[] ingredientsList = recipeList.get(i).getIngredients();
+            for (String ing : ingredientsList) {
+                if (allergyFilters.containsKey(ing) && allergyFilters.get(ing) == true) {
+                    recipeList.remove(i);
+                    i--;
+                    break;
+                }
+            }
+            i++;
         }
 
         //final TextView textView = binding.textMyRecipes;
