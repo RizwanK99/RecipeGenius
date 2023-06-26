@@ -18,4 +18,8 @@ public class RecipeObject {
     public String[] getTags() {
         return this.tags;
     }
+
+    public String[] getIngredients() {
+        return this.ingredients;
+    }
 }

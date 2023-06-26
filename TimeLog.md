@@ -10,4 +10,4 @@
 | 2023/06/16 | 1.00 h | 1.50 h  |        |         | 2.00 h |  0.50h  | D2: Buddy Team Evaluation |
 | 2023/06/22 | 1.00 h | 1.00 h  | 1.00 h |         | 1.00 h |  1.00h  | D3: Prototype Demo (Plan) |
 | 2023/06/24 | 9.50 h | 4.00 h  | 4.00 h |         | 4.00 h |  2.50h  |    D3: Prototype Demo     |
-| 2023/06/25 | 1.75 h |         |        |         |        |  2.00h  |    D3: Prototype Demo     |
+| 2023/06/25 | 4.75 h |         |        |         |        |  2.00h  |    D3: Prototype Demo     |
