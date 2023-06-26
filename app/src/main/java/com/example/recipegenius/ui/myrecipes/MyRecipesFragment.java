@@ -74,7 +74,7 @@ public class MyRecipesFragment extends Fragment {
         recipeList.add(new RecipeObject(name6, ingredients6, tags6));
 
         String name7 = "Steak Frites";
-        String[] ingredients7 = {"steak", "potatoes", "salt", "pepper", "oil"};
+        String[] ingredients7 = {"Steak", "Potatoes", "Salt", "Pepper", "Oil"};
         // String[] instructions7 = {"heat up oil in a pan", "cook steak in pan", "cut potatoes into strips", "fry potatoes in oil"};
         String[] tags7 = {"Meat", "Gluten"};
         recipeList.add(new RecipeObject(name7, ingredients7, tags7));
@@ -84,9 +84,15 @@ public class MyRecipesFragment extends Fragment {
 
         // filter recipes based on diet and allergy filters
         int i = 0;
-        while(i<recipeList.size()-1) {
+        boolean found = false;
+        for(String key : dietFilters.keySet()){
+            found |= dietFilters.get(key);
+        }
+        // skip the filter if no diets applied
+        while(i<recipeList.size()-1 && found) {
             String[] tagsList = recipeList.get(i).getTags();
             Boolean rizwank = false;
+
             for (String ing : tagsList) {
                 if (dietFilters.containsKey(ing) && dietFilters.get(ing) == true) {
                     rizwank = true;
@@ -99,10 +105,10 @@ public class MyRecipesFragment extends Fragment {
             i++;
         }
         i = 0;
-        while(i < recipeList.size()-1) {
+        while(i < recipeList.size()-1 && allergyFilters.size() > 0) {
             String[] ingredientsList = recipeList.get(i).getIngredients();
-            for (int j = 0; j < ingredientsList.length; j++) {
-                if (allergyFilters.containsKey(ingredientsList[j]) && allergyFilters.get(ingredientsList[j]) == true) {
+            for (String ing : ingredientsList) {
+                if (allergyFilters.containsKey(ing) && allergyFilters.get(ing) == true) {
                     recipeList.remove(i);
                     i--;
                     break;
