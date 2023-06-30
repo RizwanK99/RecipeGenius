@@ -12,3 +12,4 @@
 | 2023/06/24 | 9.50 h | 4.00 h  | 4.00 h | 4.00 h  | 4.00 h |  2.50h  |    D3: Prototype Demo     |
 | 2023/06/25 | 4.75 h |         |        |         |        |  2.00h  |    D3: Prototype Demo     |
 | 2023/06/26 | 4.00 h |         |        |         |        |  2.00h  |   Implementing Features   |
+| 2023/06/30 | 0.50 h |         |        |         |        |         |  D3: Prototype Demo Doc   |
