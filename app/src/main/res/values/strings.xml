@@ -9,4 +9,6 @@
     <string name="diet_filter_search_hint">Search Diet Filters</string>
     <string name="allergy_filter_search_hint">Search Allergy Filters</string>
     <string name="weight_goal">WeightGoal</string>
+    <string name="back"><![CDATA[<-]]></string>
+    <string name="forward"><![CDATA[->]]></string>
 </resources>
