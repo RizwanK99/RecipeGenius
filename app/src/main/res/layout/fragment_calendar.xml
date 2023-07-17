@@ -7,10 +7,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.calendar.CalendarFragment">
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="20dp">
@@ -25,15 +24,14 @@
             android:onClick="previousMonthAction"
             android:textSize="20sp"/>
 
-
         <TextView
             android:id="@+id/monthYearTV"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:text="July 2023"
-            android:textAlignment="center"
+            android:text="Feb 2021"
             android:textSize="20sp"
+            android:textAlignment="center"
             android:textColor="@color/black"/>
 
         <Button
@@ -46,12 +44,14 @@
             android:textStyle="bold"
             android:onClick="nextMonthAction"
             android:textSize="20sp"/>
+
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -60,6 +60,7 @@
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp"/>
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -68,6 +69,7 @@
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp"/>
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -76,6 +78,7 @@
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp"/>
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -84,14 +87,16 @@
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp"/>
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="THU"
+            android:text="THUR"
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp"/>
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -100,6 +105,7 @@
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp"/>
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -108,9 +114,14 @@
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp"/>
+
+
     </LinearLayout>
+
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/calendarRecylerView"
+        android:id="@+id/calendarRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
 </LinearLayout>
