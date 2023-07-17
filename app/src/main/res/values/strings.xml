@@ -8,4 +8,5 @@
     <string name="title_todaysPicks">TodaysPicks</string>
     <string name="diet_filter_search_hint">Search Diet Filters</string>
     <string name="allergy_filter_search_hint">Search Allergy Filters</string>
+    <string name="weight_goal">WeightGoal</string>
 </resources>

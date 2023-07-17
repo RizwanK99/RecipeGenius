@@ -10,23 +10,27 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.recipegenius.MainActivity;
 import com.example.recipegenius.R;
+import com.example.recipegenius.ui.weightgoals.WeightGoalsFragment;
 import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class QuestionnaireActivity extends AppCompatActivity {
-    private ViewPager screenPager;
-    QuestionnaireViewPagerAdapter introViewPagerAdapter;
+
+    static final int NUM_ITEMS = 4;
+    private ViewPager2 mPager;
+    QuestionnaireFragmentStateAdapter mAdapter;
     TabLayout tabIndicator;
     Button btnNext;
     int position = 0;
     Button btnGetStarted;
     Animation btnAnim;
+    WeightGoalsFragment wgf;
+    FragmentManager fm = getSupportFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,27 +46,23 @@ public class QuestionnaireActivity extends AppCompatActivity {
         tabIndicator = findViewById(R.id.tab_indicator);
         btnAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_animation);
 
-        if (restorePrefData()) {
-            Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(mainActivity);
-            finish();
-        }
+//        if (restorePrefData()) {
+//            Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
+//            startActivity(mainActivity);
+//            finish();
+//        }
 
-        // fill list screen
-        final List<QuestionnaireItem> mList = new ArrayList<>();
-        boolean fresh_food = mList.add(new QuestionnaireItem("Page 1"));
-        mList.add(new QuestionnaireItem("Page 2"));
-        mList.add(new QuestionnaireItem("Page 3"));
+//        mList.add(new QuestionnaireItem("Do you have any dietary restrictions?"));
+//        mList.add(new QuestionnaireItem("What are your meal-planning goals?"));
 
-        // setup viewpager
-        screenPager = findViewById(R.id.screen_viewpager);
-        introViewPagerAdapter = new QuestionnaireViewPagerAdapter(this, mList);
-        screenPager.setAdapter(introViewPagerAdapter);
+        mAdapter = new QuestionnaireFragmentStateAdapter(this);
 
-        tabIndicator.setupWithViewPager(screenPager);
+        mPager = findViewById(R.id.screen_viewpager);
+        mPager.setAdapter(mAdapter);
+
+        new TabLayoutMediator(tabIndicator, mPager, (tab, position) -> {}).attach();
 
         // Get Started button click listener
-
         btnGetStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,16 +78,13 @@ public class QuestionnaireActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                position = screenPager.getCurrentItem();
-                if (position < mList.size()) {
+                position = mPager.getCurrentItem();
+                if (position < NUM_ITEMS) {
                     position++;
-                    screenPager.setCurrentItem(position);
+                    mPager.setCurrentItem(position);
                 }
 
-                if (position == mList.size() - 1) { // when we reach the last screen
-
-                    // TODO : show the GETSTARTED Button and hide the indicator and the next button
-
+                if (position == NUM_ITEMS - 1) { // when we reach the last screen
                     loadLastScreen();
                 }
             }
@@ -96,8 +93,12 @@ public class QuestionnaireActivity extends AppCompatActivity {
         tabIndicator.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if (tab.getPosition() == mList.size() - 1) {
+                if (tab.getPosition() == NUM_ITEMS - 1) {
                     loadLastScreen();
+                } else {
+                    btnNext.setVisibility(View.VISIBLE);
+                    btnGetStarted.setVisibility(View.INVISIBLE);
+                    tabIndicator.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -109,6 +110,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
+
     }
     private void savePrefsData() {
         SharedPreferences pref = getApplicationContext().getSharedPreferences("myPrefs", MODE_PRIVATE);
@@ -123,15 +125,20 @@ public class QuestionnaireActivity extends AppCompatActivity {
         return isQuestionnaireComplete;
     }
 
-    // show the GETSTARTED Button and hide the indicator and the next button
     private void loadLastScreen() {
-
         btnNext.setVisibility(View.INVISIBLE);
         btnGetStarted.setVisibility(View.VISIBLE);
         tabIndicator.setVisibility(View.INVISIBLE);
-        // TODO : ADD an animation the getstarted button
-        // setup animation
         btnGetStarted.setAnimation(btnAnim);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mPager.getCurrentItem() == 0) {
+            super.onBackPressed();
+        } else {
+            mPager.setCurrentItem(mPager.getCurrentItem() - 1);
+        }
     }
 
 }

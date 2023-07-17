@@ -52,28 +52,28 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences dietFilters = context.getSharedPreferences("dietFilters", Context.MODE_PRIVATE);
         SharedPreferences allergyFilters = context.getSharedPreferences("allergyFilters", Context.MODE_PRIVATE);
 
-        dbHandler = new DBHandler(MainActivity.this);
-        Cursor cursor = dbHandler.getReadableDatabase().query("dietFilters", new String[] {"name"},  null, null, null, null, null, "100");
-        dbHandler.insertRow("Vegan");
-        dbHandler.insertRow("Vegetarian");
-        dbHandler.insertRow("Keto");
-        dbHandler.insertRow("Paleo");
-        dbHandler.insertRow("Gluten-Free");
-        dbHandler.insertRow("Pescatarian");
-        dbHandler.insertRow("Low FODMAP");
+//        dbHandler = new DBHandler(MainActivity.this);
+//        Cursor cursor = dbHandler.getReadableDatabase().query("dietFilters", new String[] {"name"},  null, null, null, null, null, "100");
+//        dbHandler.insertRow("Vegan");
+//        dbHandler.insertRow("Vegetarian");
+//        dbHandler.insertRow("Keto");
+//        dbHandler.insertRow("Paleo");
+//        dbHandler.insertRow("Gluten-Free");
+//        dbHandler.insertRow("Pescatarian");
+//        dbHandler.insertRow("Low FODMAP");
 
         // see DB contents
-        System.out.println(cursor.getCount());
-        if (cursor != null) {
-            if (cursor.moveToFirst()) {
-                do
-                {
-                    String name = cursor.getString(0);
-                    System.out.println(name);
-                } while (cursor.moveToNext());
-            }
-            cursor.close();
-        }
+//        System.out.println(cursor.getCount());
+//        if (cursor != null) {
+//            if (cursor.moveToFirst()) {
+//                do
+//                {
+//                    String name = cursor.getString(0);
+//                    System.out.println(name);
+//                } while (cursor.moveToNext());
+//            }
+//            cursor.close();
+//        }
     }
 
     @Override
