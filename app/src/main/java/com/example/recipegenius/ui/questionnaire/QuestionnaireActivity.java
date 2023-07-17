@@ -29,8 +29,6 @@ public class QuestionnaireActivity extends AppCompatActivity {
     int position = 0;
     Button btnGetStarted;
     Animation btnAnim;
-    WeightGoalsFragment wgf;
-    FragmentManager fm = getSupportFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
