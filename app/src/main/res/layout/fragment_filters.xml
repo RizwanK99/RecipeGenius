@@ -29,16 +29,6 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textStyle="bold"/>
 
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/dietFilterSearch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="false"
-                android:iconifiedByDefault="true"
-                app:queryHint="@string/diet_filter_search_hint"
-                android:layout_margin="0dp"
-                android:searchSuggestAuthority="com.example.DietSuggestionProvider"/>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -117,16 +107,7 @@
                 android:padding="15dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textStyle="bold"/>
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/allergyFilterSearch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="0dp"
-                app:queryHint="@string/allergy_filter_search_hint"
-                android:iconifiedByDefault="true"
-                android:layout_alignParentTop="false"
-                android:searchSuggestAuthority="com.example.AllergySuggestionProvider">>
-            </androidx.appcompat.widget.SearchView>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
