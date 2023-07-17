@@ -14,4 +14,5 @@
 | 2023/06/26 | 4.00 h |         |        |         |        |  2.00h  |   Implementing Features   |
 | 2023/06/30 | 0.50 h |         | 0.50 h |         |        |         |  D3: Prototype Demo Doc   |
 | 2023/07/13 | 2.50 h |         | 2.50 h |         |        |         |  D4: Architectural Styles |
-| 2023/07/16 | 2.50 h |         |        |         |        |         |   Implementing Features   |
+| 2023/07/16 | 3.50 h |         |        |         |        |         |   Implementing Features   |
+| 2023/07/17 | 5.50 h |         |        |         |        |         |   Implementing Features   |
