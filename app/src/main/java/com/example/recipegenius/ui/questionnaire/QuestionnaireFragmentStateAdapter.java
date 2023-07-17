@@ -7,9 +7,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.example.recipegenius.ui.dietaryrestrictions.DietaryRestrictionsFragment;
 import com.example.recipegenius.ui.weightgoals.WeightGoalsFragment;
-
-import java.util.List;
 
 public class QuestionnaireFragmentStateAdapter extends FragmentStateAdapter {
 
@@ -26,7 +25,7 @@ public class QuestionnaireFragmentStateAdapter extends FragmentStateAdapter {
             case 1:
                 return new WeightGoalsFragment();
             case 2:
-                return new QuestionnaireWelcomeScreenFragment();
+                return new DietaryRestrictionsFragment();
             case 3:
                 return new QuestionnaireWelcomeScreenFragment();
         }

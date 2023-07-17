@@ -50,7 +50,6 @@ public class QuestionnaireActivity extends AppCompatActivity {
 //            finish();
 //        }
 
-//        mList.add(new QuestionnaireItem("Do you have any dietary restrictions?"));
 //        mList.add(new QuestionnaireItem("What are your meal-planning goals?"));
 
         mAdapter = new QuestionnaireFragmentStateAdapter(this);
