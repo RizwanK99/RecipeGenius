@@ -24,7 +24,7 @@
         android:layout_gravity="left" >
   
         <androidx.recyclerview.widget.RecyclerView
-            android:nestedScrollingEnabled="false" 
+            android:nestedScrollingEnabled="true"
             android:id="@+id/recyclerView" 
             android:layout_width="match_parent" 
             android:overScrollMode="never" 

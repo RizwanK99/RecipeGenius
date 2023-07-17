@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import androidx.appcompat.widget.SearchView;
 
 import androidx.annotation.NonNull;
 
@@ -23,12 +26,21 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class FiltersFragment extends Fragment {
 
     private FragmentFiltersBinding binding;
     private FiltersViewModel mViewModel;
+
+    SearchView dietSearchView;
+    ArrayList<String> dietList;
+    ArrayAdapter<String> dietAdapter;
+    SearchView allergySearchView;
+    ListView allergyListView;
+    ArrayList<String> allergyList;
+    ArrayAdapter<String> allergyAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -39,11 +51,31 @@ public class FiltersFragment extends Fragment {
 
         binding.setViewModel(filtersViewModel);
 
+        // filters
         SharedPreferences dietFilters = getActivity().getSharedPreferences("dietFilters", Context.MODE_PRIVATE);
         SharedPreferences allergyFilters = getActivity().getSharedPreferences("allergyFilters", Context.MODE_PRIVATE);
 
         filtersViewModel.restrictions_filters = (Map<String, Boolean>) dietFilters.getAll();
         filtersViewModel.allergy_filters = (Map<String, Boolean>) allergyFilters.getAll();
+
+        //TODO: implement search bars (suggestions, selection, etc.)
+        /*dietSearchView = (SearchView) root.findViewById(R.id.dietFilterSearch);
+        dietAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_expandable_list_item_1, dietList);
+        dietSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
+            }
+        });*/
+
+//        allergySearchView = (SearchView) root.findViewById(R.id.allergyFilterSearch);
+//        allergySuggestions = (ListView) root.findViewById(R.id.allergySuggestions);
+
 
         Button applyFiltersButton = (Button) root.findViewById(R.id.applyFiltersButton);
         applyFiltersButton.setOnClickListener(new View.OnClickListener() {
@@ -106,4 +138,6 @@ public class FiltersFragment extends Fragment {
             System.out.println("OK");
         }
     }
+
+
 }
