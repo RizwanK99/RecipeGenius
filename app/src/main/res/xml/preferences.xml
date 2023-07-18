@@ -58,5 +58,17 @@
             app:summary="Report technical issues or suggest new features"
             android:icon="@drawable/feedback"/>
     </PreferenceCategory>
+    <PreferenceCategory
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Securtiy">
+
+        <Preference
+            android:icon="@android:drawable/ic_menu_mylocation"
+            android:summary="Make your location visible to the app"
+            app:key="feedback"
+            app:summary="Report technical issues or suggest new features"
+            app:title="Enable Location" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
