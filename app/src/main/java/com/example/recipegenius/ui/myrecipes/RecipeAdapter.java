@@ -61,8 +61,8 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
         }
 
         String instructions = "Instructions: ";
-        if (list.get(position).ingredients.length > 0){
-            ingredients += list.get(position).ingredients[0];
+        if (list.get(position).instructions.length > 0){
+            instructions += list.get(position).instructions[0];
         }
 
 
