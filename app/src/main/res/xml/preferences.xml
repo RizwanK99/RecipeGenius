@@ -38,6 +38,17 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        app:key="handsfree_category"
+        app:title="Enable Hands Free Mode">
+
+        <SwitchPreferenceCompat
+            app:key="handsfree"
+            app:title="Enable hands free"
+            android:icon="@drawable/microphone"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         app:key="help_category"
         app:title="Help">
 

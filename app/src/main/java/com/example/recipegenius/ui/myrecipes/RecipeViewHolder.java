@@ -22,9 +22,9 @@ public class RecipeViewHolder extends RecyclerView.ViewHolder {
         RecipeViewHolder(View itemView) {
                 super(itemView);
                 recipeName = (TextView) itemView.findViewById(R.id.recipeName);
-                recipeTags = (TextView) itemView.findViewById(R.id.recipeTags);
-                recipeIngredients = (TextView) itemView.findViewById(R.id.recipeIngredients);
-                recipeInstructions = (TextView) itemView.findViewById(R.id.recipeInstructions);
+//                recipeTags = (TextView) itemView.findViewById(R.id.recipeTags);
+//                recipeIngredients = (TextView) itemView.findViewById(R.id.recipeIngredients);
+//                recipeInstructions = (TextView) itemView.findViewById(R.id.recipeInstructions);
 
                 String imageUri = "https://i.imgur.com/tGbaZCY.jpg";
                 recipeImage = (ImageView) itemView.findViewById(R.id.recipeImage);
