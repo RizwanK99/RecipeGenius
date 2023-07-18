@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.content.SharedPreferences;
 
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.navigation.Navigation;
@@ -22,9 +23,10 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
     Context context;
     ClickListener listener;
 
-    public RecipeAdapter(List<RecipeObject> list, ClickListener listener) {
+    public RecipeAdapter(List<RecipeObject> list, ClickListener listener, Context context) {
         this.list = list;
         this.listener = listener;
+        this.context = context;
     }
 
     @Override
@@ -87,13 +89,20 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
         viewHolder.recipeImage.setImageURI(imageUri);
         Picasso.get().load(imageUri).fit().centerCrop().into(viewHolder.recipeImage);
 
-
         viewHolder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
                 listener.click(index);
                 System.out.println("Clicked on " + index);
+                SharedPreferences currentRecipe = context.getSharedPreferences("currentRecipe", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = currentRecipe.edit();
+                editor.putString("r_name", list.get(position).name);
+//                editor.putString("r_ingredients", list.get(position).ingredients);
+//                editor.putString("r_instructions", list.get(position).instructions);
+//                editor.putString("r_tags", list.get(position).tags);
+                editor.putString("r_imageURL", list.get(position).imageURL);
+                editor.apply();
                 Navigation.findNavController(view).navigate(R.id.navigation_recipe_page);
             }
         });

@@ -44,42 +44,6 @@
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
             />
-
-<!--            <TextView-->
-<!--                android:id="@+id/recipeTags"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_below="@+id/recipeImage"-->
-<!--                android:layout_marginTop="5dp"-->
-<!--                android:layout_marginEnd="20dp"-->
-<!--                android:layout_marginStart="10dp"-->
-<!--                android:text="May 23, 2015"-->
-<!--                android:textSize="16sp"-->
-<!--            />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/recipeIngredients"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_below="@+id/recipeTags"-->
-<!--                android:layout_marginEnd="20dp"-->
-<!--                android:layout_marginTop="5dp"-->
-<!--                android:layout_marginStart="10dp"-->
-<!--                android:text="Ingredients"-->
-<!--                android:textSize="16sp"-->
-<!--            />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/recipeInstructions"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_below="@+id/recipeIngredients"-->
-<!--                android:layout_marginEnd="20dp"-->
-<!--                android:layout_marginTop="5dp"-->
-<!--                android:layout_marginStart="10dp"-->
-<!--                android:text="Instructions"-->
-<!--                android:textSize="16sp"-->
-<!--            />-->
             
         </LinearLayout>
     </androidx.cardview.widget.CardView>
