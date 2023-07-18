@@ -1,4 +1,4 @@
-package com.example.recipegenius.ui.dietaryrestrictions;
+package com.example.recipegenius.ui.questionnaire.dietaryrestrictions;
 
 import android.content.Context;
 import android.content.SharedPreferences;

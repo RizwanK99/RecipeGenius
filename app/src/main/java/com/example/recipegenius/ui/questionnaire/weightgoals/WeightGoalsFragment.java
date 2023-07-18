@@ -1,4 +1,4 @@
-package com.example.recipegenius.ui.weightgoals;
+package com.example.recipegenius.ui.questionnaire.weightgoals;
 
 import android.content.Context;
 import android.content.SharedPreferences;

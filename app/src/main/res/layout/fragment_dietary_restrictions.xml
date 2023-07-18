@@ -2,10 +2,10 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.dietaryrestrictions.DietaryRestrictionsFragment">
+    tools:context=".ui.questionnaire.dietaryrestrictions.DietaryRestrictionsFragment">
 
     <data class="FragmentDietaryRestrictionsBinding">
-        <variable name="viewModel" type="com.example.recipegenius.ui.dietaryrestrictions.DietaryRestrictionsViewModel" />
+        <variable name="viewModel" type="com.example.recipegenius.ui.questionnaire.dietaryrestrictions.DietaryRestrictionsViewModel" />
     </data>
 
     <androidx.core.widget.NestedScrollView
