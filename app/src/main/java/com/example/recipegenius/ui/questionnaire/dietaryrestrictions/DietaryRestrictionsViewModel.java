@@ -1,4 +1,4 @@
-package com.example.recipegenius.ui.filters;
+package com.example.recipegenius.ui.questionnaire.dietaryrestrictions;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModel;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FiltersViewModel extends ViewModel {
+public class DietaryRestrictionsViewModel extends ViewModel {
 
     public Map<String,Boolean> restrictions_filters = new HashMap<String,Boolean>();
     public Map<String,Boolean> allergy_filters = new HashMap<String,Boolean>();
@@ -42,6 +42,6 @@ public class FiltersViewModel extends ViewModel {
     public static String TOMATO = "Tomato";
 
 
-    public FiltersViewModel() {
+    public DietaryRestrictionsViewModel() {
     }
 }

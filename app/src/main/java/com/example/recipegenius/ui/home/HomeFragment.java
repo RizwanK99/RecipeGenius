@@ -47,9 +47,6 @@ public class HomeFragment extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.navigation_filters);
             }
         });
-        
-
-
 
         return root;
     }

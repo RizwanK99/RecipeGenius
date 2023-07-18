@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="ui.recipepage.RecipePageFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,11 +16,11 @@
         app:layout_constraintRight_toRightOf="parent">
 
         <TextView
-            android:id="@+id/textHomeTitle"
+            android:id="@+id/textRecipePageTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Welcome to Recipe Genius"
+            android:text="Recipe Title"
             android:textSize="24sp"
             android:layout_marginBottom="80dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -28,28 +28,21 @@
             app:layout_constraintRight_toRightOf="parent"/>
 
         <Button
-            android:id="@+id/myRecipesButton"
+            android:id="@+id/backButton"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="My Recipes" />
+            android:text="Back" />
 
         <Button
-            android:id="@+id/todaysPicksButton"
+            android:id="@+id/handsFreeButton"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Today's Picks" />
+            android:text="Enter Hand's Free Mode" />
 
-        <Button
-            android:id="@+id/editFiltersButton"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="Edit My Filters" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

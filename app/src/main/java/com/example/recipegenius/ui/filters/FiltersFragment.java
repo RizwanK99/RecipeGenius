@@ -76,7 +76,6 @@ public class FiltersFragment extends Fragment {
 //        allergySearchView = (SearchView) root.findViewById(R.id.allergyFilterSearch);
 //        allergySuggestions = (ListView) root.findViewById(R.id.allergySuggestions);
 
-
         Button applyFiltersButton = (Button) root.findViewById(R.id.applyFiltersButton);
         applyFiltersButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -106,7 +105,6 @@ public class FiltersFragment extends Fragment {
 //                }
 //                System.out.println(url);
 
-
                 editor = allergyFilters.edit();
                 for (Map.Entry<String,Boolean> f: filtersViewModel.allergy_filters.entrySet()) {
                     editor.putBoolean(f.getKey(), f.getValue());
@@ -114,7 +112,7 @@ public class FiltersFragment extends Fragment {
                 editor.apply();
 
                 // navigate back to home
-                Navigation.findNavController(v).navigate(R.id.navigation_home);
+                Navigation.findNavController(v).navigateUp();
             }
         });
 
