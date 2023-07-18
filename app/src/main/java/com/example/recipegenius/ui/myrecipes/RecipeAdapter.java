@@ -15,6 +15,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+import java.util.*;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
 
@@ -45,45 +47,43 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(final RecipeViewHolder viewHolder, final int position)
-    {
+    public void onBindViewHolder(final RecipeViewHolder viewHolder, final int position) {
         int index = viewHolder.getAdapterPosition();
         viewHolder.recipeName
                 .setText(list.get(position).name);
         // change ingredients and tags from array to single string
 
         String ingredients = "Ingrediants: ";
-        if (list.get(position).ingredients.length > 0){
+        if (list.get(position).ingredients.length > 0) {
             ingredients += list.get(position).ingredients[0];
         }
 
         String tags = "Tags: ";
-        if (list.get(position).tags.length > 0){
+        if (list.get(position).tags.length > 0) {
             tags += list.get(position).tags[0];
         }
 
         String instructions = "Instructions: ";
-        if (list.get(position).instructions.length > 0){
+        if (list.get(position).instructions.length > 0) {
             instructions += list.get(position).instructions[0];
         }
-
 
         for (int i = 1; i < list.get(position).ingredients.length; i++) {
             ingredients = ingredients + ", " + list.get(position).ingredients[i];
         }
         for (int i = 1; i < list.get(position).tags.length; i++) {
             tags = tags + ", " + list.get(position).tags[i];
-        } 
+        }
         for (int i = 1; i < list.get(position).instructions.length; i++) {
             instructions = instructions + ", " + list.get(position).instructions[i];
-        } 
+        }
 
         // viewHolder.recipeIngredients
-        //         .setText(ingredients);
+        // .setText(ingredients);
         // viewHolder.recipeTags
-        //         .setText(tags);
+        // .setText(tags);
         // viewHolder.recipeInstructions
-        //         .setText(instructions);
+        // .setText(instructions);
 
         Uri imageUri = Uri.parse(list.get(position).imageURL);
         viewHolder.recipeImage.setImageURI(imageUri);
@@ -91,17 +91,34 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
 
         viewHolder.view.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 listener.click(index);
                 System.out.println("Clicked on " + index);
                 SharedPreferences currentRecipe = context.getSharedPreferences("currentRecipe", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = currentRecipe.edit();
                 editor.putString("r_name", list.get(position).name);
-//                editor.putString("r_ingredients", list.get(position).ingredients);
-//                editor.putString("r_instructions", list.get(position).instructions);
-//                editor.putString("r_tags", list.get(position).tags);
+
                 editor.putString("r_imageURL", list.get(position).imageURL);
+
+                Set<String> set_ingr = new HashSet<String>();
+                for (int i = 0; i < list.get(position).ingredients.length; i++) {
+                    set_ingr.add(list.get(position).ingredients[i]);
+                }
+
+                Set<String> set_inst = new HashSet<String>();
+                for (int i = 0; i < list.get(position).instructions.length; i++) {
+                    set_inst.add(list.get(position).instructions[i]);
+                }
+
+                Set<String> set_tags = new HashSet<String>();
+                for (int i = 0; i < list.get(position).tags.length; i++) {
+                    set_tags.add(list.get(position).tags[i]);
+                }
+
+                editor.putStringSet("r_ingredients", set_ingr);
+                editor.putStringSet("r_instructions", set_inst);
+                editor.putStringSet("r_tags", set_tags);
+
                 editor.apply();
                 Navigation.findNavController(view).navigate(R.id.navigation_recipe_page);
             }

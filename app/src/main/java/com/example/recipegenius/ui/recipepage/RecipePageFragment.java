@@ -10,11 +10,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ImageView;
 
+import java.util.Set;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+
+import org.w3c.dom.Text;
+
 import com.example.recipegenius.R;
 import com.squareup.picasso.Picasso;
 
@@ -43,12 +47,48 @@ public class RecipePageFragment extends Fragment {
         String imageUri = currentRecipe.getString("r_imageURL", "No image found");
 
         recipeName = (TextView) root.findViewById(R.id.recipePageName);
+        recipeName.setText(name);
 
         recipePageImage = (ImageView) root.findViewById(R.id.recipePageImage);
         Picasso.get().load(imageUri).fit().centerCrop().into(recipePageImage);
 
         System.out.println(name);
         System.out.println(imageUri);
+
+        Set<String> set_ingr = currentRecipe.getStringSet("r_ingredients", null);
+        Set<String> set_inst = currentRecipe.getStringSet("r_instructions", null);
+        Set<String> set_tags = currentRecipe.getStringSet("r_tags", null);
+
+        String ingr = "";
+        String inst = "";
+        String tags = "";
+
+        if (set_ingr != null) {
+            for (String s : set_ingr) {
+                ingr += s + "\n";
+            }
+        }
+
+        if (set_inst != null) {
+            for (String s : set_inst) {
+                inst += s + "\n";
+            }
+        }
+
+        if (set_tags != null) {
+            for (String s : set_tags) {
+                tags += s + "\n";
+            }
+        }
+
+        TextView ingrDisp = (TextView) root.findViewById(R.id.recipePageIngredients);
+        ingrDisp.setText(ingr);
+
+        TextView instDisp = (TextView) root.findViewById(R.id.recipePageInstructions);
+        instDisp.setText(inst);
+
+        TextView tagsDisp = (TextView) root.findViewById(R.id.recipePageTags);
+        tagsDisp.setText(tags);
         
 
         // Button recipebutton = (Button) root.findViewById(R.id.myRecipesButton);
