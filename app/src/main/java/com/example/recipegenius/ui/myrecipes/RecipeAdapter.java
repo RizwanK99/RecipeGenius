@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.navigation.Navigation;
 
 import com.example.recipegenius.R;
 import com.squareup.picasso.Picasso;
@@ -93,6 +94,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
             {
                 listener.click(index);
                 System.out.println("Clicked on " + index);
+                Navigation.findNavController(view).navigate(R.id.navigation_recipe_page);
             }
         });
     }
