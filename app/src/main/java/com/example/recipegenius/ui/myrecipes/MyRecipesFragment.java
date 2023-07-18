@@ -38,82 +38,85 @@ public class MyRecipesFragment extends Fragment {
         
 
         // create fake data of recipe objects
+        
+        String name1 = "Peanut Butter and Jelly";
+        String[] ingredients1 = {"Peanut Butter", "Peanuts", "Jelly", "Bread"};
+        String[] instructions1 = {"spread peanut butter on one slice of bread", "spread jelly on the other slice of bread", "put the two slices of bread together"};
+        String[] tags1 = {"Nuts", "Gluten", "Fruit"};
+        String imageURL1 = "https://t3.ftcdn.net/jpg/03/94/77/66/360_F_394776627_Fcf6vVQB4EO6sKVtDCTnfdnRJNBpeIEj.jpg";
+        recipeList.add(new RecipeObject(name1, ingredients1, instructions1, tags1, imageURL1));
 
-        String[] ingredients = {"Peanut Butter", "Peanuts", "Jelly", "Bread"};
-        String[] instructions = {"spread peanut butter on one slice of bread", "spread jelly on the other slice of bread", "put the two slices of bread together"};
-        String[] tags = {"Nuts", "Gluten", "Fruit"};
-        recipeList.add(new RecipeObject("Peanut Butter and Jelly", ingredients, tags));
-//        recipeList.add(new RecipeObject("Peanut Butter and Jelly", ingredients, instructions, tags));
-//
+        String name2 = "Spaghetti and Meatballs";
         String[] ingredients2 = {"Pasta", "Tomato Sauce", "Meatballs"};
-//        String[] instructions2 = {"boil water", "cook pasta in boiling water", "heat up tomato sauce", "cook meatballs", "put pasta, tomato sauce, and meatballs together"};
+        String[] instructions2 = {"boil water", "cook pasta in boiling water", "heat up tomato sauce", "cook meatballs", "put pasta, tomato sauce, and meatballs together"};
         String[] tags2 = {"Pasta", "Tomato", "Meat"};
-        recipeList.add(new RecipeObject("Spaghetti and Meatballs", ingredients2, tags2));
-//
-        String[] ingredients3 = {"Bread", "Cheese", "Butter"};
-//        String[] instructions3 = {"spread butter on one side of each slice of bread", "put cheese between the two slices of bread", "cook the sandwich on a pan"};
-        String[] tags3 = {"Bread", "Vegan"};
-        recipeList.add(new RecipeObject("Grilled Cheese Sandwich", ingredients3, tags3));
+        String imageURL2 = "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?cs=srgb&dl=pexels-engin-akyurt-1437267.jpg&fm=jpg";
+        recipeList.add(new RecipeObject(name2, ingredients2, instructions2, tags2, imageURL2));
+// //
+//         String[] ingredients3 = {"Bread", "Cheese", "Butter"};
+// //        String[] instructions3 = {"spread butter on one side of each slice of bread", "put cheese betwe"en the two slices of bread", "cook the sandwich on a pan"};
+//         String[] tags3 = {"Bread", "Vegan"};
+//         recipeList.add(new RecipeObject("Grilled Cheese Sandwich", ingredients3, tags3));
 
-        String name4 = "Tomato Soup";
-        String[] ingredients4 = {"Tomatoes", "Water", "Salt", "Pepper"};
-        // String[] instructions4 = {"boil water", "add tomatoes to boiling water", "add salt and pepper to taste"};
-        String[] tags4 = {"Vegan", "Vegetarian", "Gluten-Free"};
-        recipeList.add(new RecipeObject(name4, ingredients3, tags3));
+//         String name4 = "Tomato Soup";
+//         String[] ingredients4 = {"Tomatoes", "Water", "Salt", "Pepper"};
+//         // String[] instructions4 = {"boil water", "add tomatoes to boiling water", "add salt and pepper to taste"};
+//         String[] tags4 = {"Vegan", "Vegetarian", "Gluten-Free"};
+//         recipeList.add(new RecipeObject(name4, ingredients3, tags3));
 
-        String name5 = "Fried Chicken";
-        String[] ingredients5 = {"Chicken", "Flour", "Salt", "Pepper", "Oil"};
-        // String[] instructions5 = {"heat up oil in a pan", "coat chicken in flour, salt, and pepper", "cook chicken in pan"};
-        String[] tags5 = {"Meat", "Gluten"};
-        recipeList.add(new RecipeObject(name5, ingredients5, tags5));
+//         String name5 = "Fried Chicken";
+//         String[] ingredients5 = {"Chicken", "Flour", "Salt", "Pepper", "Oil"};
+//         // String[] instructions5 = {"heat up oil in a pan", "coat chicken in flour, salt, and pepper", "cook chicken in pan"};
+//         String[] tags5 = {"Meat", "Gluten"};
+//         recipeList.add(new RecipeObject(name5, ingredients5, tags5));
 
-        String name6 = "Chocolate Chip Cookies";
-        String[] ingredients6 = {"Flour", "Sugar", "Butter", "Chocolate Chips", "Peanuts"};
-        // String[] instructions6 = {"mix flour, sugar, and butter together", "add chocolate chips to the mixture", "bake the cookies in the oven"};
-        String[] tags6 = {"Gluten", "Dairy"};
-        recipeList.add(new RecipeObject(name6, ingredients6, tags6));
+//         String name6 = "Chocolate Chip Cookies";
+//         String[] ingredients6 = {"Flour", "Sugar", "Butter", "Chocolate Chips", "Peanuts"};
+//         // String[] instructions6 = {"mix flour, sugar, and butter together", "add chocolate chips to the mixture", "bake the cookies in the oven"};
+//         String[] tags6 = {"Gluten", "Dairy"};
+//         recipeList.add(new RecipeObject(name6, ingredients6, tags6));
 
-        String name7 = "Steak Frites";
-        String[] ingredients7 = {"Steak", "Potatoes", "Salt", "Pepper", "Oil"};
-        // String[] instructions7 = {"heat up oil in a pan", "cook steak in pan", "cut potatoes into strips", "fry potatoes in oil"};
-        String[] tags7 = {"Meat", "Gluten"};
-        recipeList.add(new RecipeObject(name7, ingredients7, tags7));
+//         String name7 = "Steak Frites";
+//         String[] ingredients7 = {"Steak", "Potatoes", "Salt", "Pepper", "Oil"};
+//         // String[] instructions7 = {"heat up oil in a pan", "cook steak in pan", "cut potatoes into strips", "fry potatoes in oil"};
+//         String[] tags7 = {"Meat", "Gluten"};
+//         recipeList.add(new RecipeObject(name7, ingredients7, tags7));
 
-        String name8 = "Peanut Butter Cookies";
-        String[] ingredients8 = {"peanut butter", "sugar", "eggs", "flour"};
-        // String[] instructions8 = {"mix peanut butter, sugar, and egg together", "bake the cookies in the oven"};
-        String[] tags8 = {"vegetarian", "pescatarian"};
-        recipeList.add(new RecipeObject(name8, ingredients8, tags8));
+//         String name8 = "Peanut Butter Cookies";
+//         String[] ingredients8 = {"peanut butter", "sugar", "eggs", "flour"};
+//         // String[] instructions8 = {"mix peanut butter, sugar, and egg together", "bake the cookies in the oven"};
+//         String[] tags8 = {"vegetarian", "pescatarian"};
+//         recipeList.add(new RecipeObject(name8, ingredients8, tags8));
 
-        String name9 = "Peanut Butter and Jelly Sandwich";
-        String[] ingredients9 = {"peanut butter", "jelly", "bread"};
-        // String[] instructions9 = {"spread peanut butter on one slice of bread", "spread jelly on the other slice of bread", "put the two slices of bread together"};
-        String[] tags9 = {"vegan", "vegetarian", "pescatarian"};
-        recipeList.add(new RecipeObject(name9, ingredients9, tags9));
+//         String name9 = "Peanut Butter and Jelly Sandwich";
+//         String[] ingredients9 = {"peanut butter", "jelly", "bread"};
+//         // String[] instructions9 = {"spread peanut butter on one slice of bread", "spread jelly on the other slice of bread", "put the two slices of bread together"};
+//         String[] tags9 = {"vegan", "vegetarian", "pescatarian"};
+//         recipeList.add(new RecipeObject(name9, ingredients9, tags9));
 
-        String name10 = "Trail Mix";
-        String[] ingredients10 = {"almonds", "cashews", "raisins", "chocolate chips", "nuts"};
-        // String[] instructions10 = {"mix almonds, cashews, raisins, and chocolate chips together"};
-        String[] tags10 = {"glutenFree", "vegan", "vegetarian", "pescatarian"};
-        recipeList.add(new RecipeObject(name10, ingredients10, tags10));
+//         String name10 = "Trail Mix";
+//         String[] ingredients10 = {"almonds", "cashews", "raisins", "chocolate chips", "nuts"};
+//         // String[] instructions10 = {"mix almonds, cashews, raisins, and chocolate chips together"};
+//         String[] tags10 = {"glutenFree", "vegan", "vegetarian", "pescatarian"};
+//         recipeList.add(new RecipeObject(name10, ingredients10, tags10));
 
-        String name11 = "Pancakes";
-        String[] ingredients11 = {"flour", "sugar", "baking powder", "salt", "eggs", "milk", "butter"};
-        // String[] instructions11 = {"mix flour, sugar, baking powder, and salt together", "add egg, milk, and butter to the mixture", "cook the pancakes on a pan"};
-        String[] tags11 = {"vegetrain", "pescatarian"};
-        recipeList.add(new RecipeObject(name11, ingredients11, tags11));
+//         String name11 = "Pancakes";
+//         String[] ingredients11 = {"flour", "sugar", "baking powder", "salt", "eggs", "milk", "butter"};
+//         // String[] instructions11 = {"mix flour, sugar, baking powder, and salt together", "add egg, milk, and butter to the mixture", "cook the pancakes on a pan"};
+//         String[] tags11 = {"vegetrain", "pescatarian"};
+//         recipeList.add(new RecipeObject(name11, ingredients11, tags11));
 
-        String name12 = "Peanut Butter";
-        String[] ingredients12 = {"peanuts", "salt"};
-        // String[] instructions12 = {"blend peanuts and salt together"};
-        String[] tags12 = {"vegan", "vegetarian", "pescatarian"};
-        recipeList.add(new RecipeObject(name12, ingredients12, tags12));
+//         String name12 = "Peanut Butter";
+//         String[] ingredients12 = {"peanuts", "salt"};
+//         // String[] instructions12 = {"blend peanuts and salt together"};
+//         String[] tags12 = {"vegan", "vegetarian", "pescatarian"};
+//         recipeList.add(new RecipeObject(name12, ingredients12, tags12));
 
-        String name13 = "Vai's Famous Paneer";
-        String[] ingredients13 = {"paneer", "salt", "pepper", "oil"};
-        // String[] instructions13 = {"heat up oil in a pan", "cook paneer in pan", "add salt and pepper to taste"};
-        String[] tags13 = {"vegetarian"};
-        recipeList.add(new RecipeObject(name13, ingredients13, tags13));
+//         String name13 = "Vai's Famous Paneer";
+//         String[] ingredients13 = {"paneer", "salt", "pepper", "oil"};
+//         // String[] instructions13 = {"heat up oil in a pan", "cook paneer in pan", "add salt and pepper to taste"};
+//         String[] tags13 = {"vegetarian"};
+//         recipeList.add(new RecipeObject(name13, ingredients13, tags13));
 
 
         Map<String, Boolean> dietFilters = (Map<String, Boolean>) getActivity().getSharedPreferences("dietFilters", Context.MODE_PRIVATE).getAll();

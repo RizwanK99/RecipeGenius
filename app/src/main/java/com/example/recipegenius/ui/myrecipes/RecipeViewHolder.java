@@ -1,6 +1,7 @@
 package com.example.recipegenius.ui.myrecipes;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.ImageView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,8 +11,12 @@ import com.example.recipegenius.ui.myrecipes.RecipeObject;
 public class RecipeViewHolder extends RecyclerView.ViewHolder {
         TextView recipeName;
         TextView recipeIngredients;
+        TextView recipeInstructions;
         TextView recipeTags;
+        ImageView recipeImage;
         View view;
+
+
 
         RecipeViewHolder(View itemView)
         {
