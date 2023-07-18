@@ -6,6 +6,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -87,6 +88,11 @@ public class MainActivity2 extends AppCompatActivity implements CalendarAdapter.
     public void nextMonthAction(View view){
         selectedDate = selectedDate.plusMonths(1);
         setMonthView();
+    }
+
+    public void backHome(View view){
+        Intent i = new Intent(this,MainActivity.class);
+        startActivity(i);
     }
 
     @Override

@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity2">
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back Home"
+        android:onClick="backHome" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,6 +52,7 @@
             android:textStyle="bold"
             android:onClick="nextMonthAction"
             android:textSize="20sp"/>
+
 
     </LinearLayout>
 
@@ -123,5 +132,6 @@
         android:id="@+id/calendarRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
 
 </LinearLayout>
