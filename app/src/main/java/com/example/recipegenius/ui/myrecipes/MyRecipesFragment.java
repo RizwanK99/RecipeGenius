@@ -36,9 +36,7 @@ public class MyRecipesFragment extends Fragment {
 
         recipeList = new ArrayList<>();
         
-
         // create fake data of recipe objects
-        
         String name1 = "Peanut Butter and Jelly";
         String[] ingredients1 = {"Peanut Butter", "Peanuts", "Jelly", "Bread"};
         String[] instructions1 = {"spread peanut butter on one slice of bread", "spread jelly on the other slice of bread", "put the two slices of bread together"};
@@ -52,23 +50,27 @@ public class MyRecipesFragment extends Fragment {
         String[] tags2 = {"Pasta", "Tomato", "Meat"};
         String imageURL2 = "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?cs=srgb&dl=pexels-engin-akyurt-1437267.jpg&fm=jpg";
         recipeList.add(new RecipeObject(name2, ingredients2, instructions2, tags2, imageURL2));
-// //
-//         String[] ingredients3 = {"Bread", "Cheese", "Butter"};
-// //        String[] instructions3 = {"spread butter on one side of each slice of bread", "put cheese betwe"en the two slices of bread", "cook the sandwich on a pan"};
-//         String[] tags3 = {"Bread", "Vegan"};
-//         recipeList.add(new RecipeObject("Grilled Cheese Sandwich", ingredients3, tags3));
 
-//         String name4 = "Tomato Soup";
-//         String[] ingredients4 = {"Tomatoes", "Water", "Salt", "Pepper"};
-//         // String[] instructions4 = {"boil water", "add tomatoes to boiling water", "add salt and pepper to taste"};
-//         String[] tags4 = {"Vegan", "Vegetarian", "Gluten-Free"};
-//         recipeList.add(new RecipeObject(name4, ingredients3, tags3));
+        String name3 = "Grilled Cheese Sandwich";
+        String[] ingredients3 = {"Bread", "Cheese", "Butter"};
+        String[] instructions3 = {"spread butter on one side of each slice of bread", "put cheese between the two slices of bread", "cook the sandwich on a pan"};
+        String[] tags3 = {"Gluten", "Vegan"};
+        String imageURL3 = "https://natashaskitchen.com/wp-content/uploads/2021/08/Grilled-Cheese-Sandwich-SQ.jpg";
+        recipeList.add(new RecipeObject(name3, ingredients3, instructions3, tags3, imageURL3));
 
-//         String name5 = "Fried Chicken";
-//         String[] ingredients5 = {"Chicken", "Flour", "Salt", "Pepper", "Oil"};
-//         // String[] instructions5 = {"heat up oil in a pan", "coat chicken in flour, salt, and pepper", "cook chicken in pan"};
-//         String[] tags5 = {"Meat", "Gluten"};
-//         recipeList.add(new RecipeObject(name5, ingredients5, tags5));
+        String name4 = "Tomato Soup";
+        String[] ingredients4 = {"Tomatoes", "Water", "Salt", "Pepper"};
+        String[] instructions4 = {"boil water", "add tomatoes to boiling water", "add salt and pepper to taste"};
+        String[] tags4 = {"Vegan", "Vegetarian", "Gluten-Free"};
+        String imageURL4 = "https://www.inspiredtaste.net/wp-content/uploads/2022/11/Tomato-Soup-Recipe-Video.jpg";
+        recipeList.add(new RecipeObject(name4, ingredients4, instructions4, tags4, imageURL4));
+
+        String name5 = "Fried Chicken";
+        String[] ingredients5 = {"Chicken", "Flour", "Salt", "Pepper", "Oil"};
+        String[] instructions5 = {"heat up oil in a pan", "coat chicken in flour, salt, and pepper", "cook chicken in pan"};
+        String[] tags5 = {"Meat", "Gluten"};
+        String imageURL5 = "https://www.allrecipes.com/thmb/SoBuPU73KcbYHl3Kp3j8Xx4A3fc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8805-CrispyFriedChicken-mfs-3x2-072-d55b8406d4ae45709fcdeb58a04143c2.jpg";
+        recipeList.add(new RecipeObject(name5, ingredients5, instructions5, tags5, imageURL5));
 
 //         String name6 = "Chocolate Chip Cookies";
 //         String[] ingredients6 = {"Flour", "Sugar", "Butter", "Chocolate Chips", "Peanuts"};
