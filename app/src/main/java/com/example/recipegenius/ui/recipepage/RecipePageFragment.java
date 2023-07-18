@@ -64,20 +64,20 @@ public class RecipePageFragment extends Fragment {
         String tags = "";
 
         if (set_ingr != null) {
-            for (String s : set_ingr) {
-                ingr += s + "\n";
+            for (int i = 0; i < set_ingr.size(); i++) {
+                ingr += i+1 + ". " + set_ingr.toArray()[i] + "\n";
             }
         }
 
         if (set_inst != null) {
-            for (String s : set_inst) {
-                inst += s + "\n";
+            for (int i = 0; i < set_inst.size(); i++) {
+                inst += i+1 + ". " + set_inst.toArray()[i] + "\n";
             }
         }
 
         if (set_tags != null) {
             for (String s : set_tags) {
-                tags += s + "\n";
+                tags += s + ", ";
             }
         }
 
