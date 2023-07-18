@@ -159,8 +159,6 @@ public class MyRecipesFragment extends Fragment {
             i++;
         }
 
-        //final TextView textView = binding.textMyRecipes;
-        //myRecipesViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         ClickListener listener = new ClickListener() {
             @Override
             public void click(int index) {

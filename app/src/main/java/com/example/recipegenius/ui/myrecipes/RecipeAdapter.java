@@ -76,12 +76,12 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
             instructions = instructions + ", " + list.get(position).instructions[i];
         } 
 
-        viewHolder.recipeIngredients
-                .setText(ingredients);
-        viewHolder.recipeTags
-                .setText(tags);
-        viewHolder.recipeInstructions
-                .setText(instructions);
+        // viewHolder.recipeIngredients
+        //         .setText(ingredients);
+        // viewHolder.recipeTags
+        //         .setText(tags);
+        // viewHolder.recipeInstructions
+        //         .setText(instructions);
 
         Uri imageUri = Uri.parse(list.get(position).imageURL);
         viewHolder.recipeImage.setImageURI(imageUri);
