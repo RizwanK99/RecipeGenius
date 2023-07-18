@@ -9,9 +9,9 @@ public class MealPlanningGoalsViewModel extends ViewModel {
 
     public Map<String,Boolean> mealPlanningGoals = new HashMap<String,Boolean>();
 
-    public static String MEAL_PREP = "Meal Prep";
-    public static String USE_LEFTOVERS = "Use Leftovers";
-    public static String BUDGET = "Budget";
+    public static String MEAL_PREP = "P";
+    public static String USE_LEFTOVERS = "L";
+    public static String BUDGET = "B";
 
     public MealPlanningGoalsViewModel() {
     }

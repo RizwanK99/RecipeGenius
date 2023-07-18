@@ -1,6 +1,5 @@
 package com.example.recipegenius.ui.questionnaire.mealplanninggoals;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,12 +10,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.preference.PreferenceManager;
 
 import com.example.recipegenius.R;
 
 import com.example.recipegenius.databinding.FragmentMealPlanningGoalsBinding;
 
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class MealPlanningGoalsFragment extends Fragment {
 
@@ -42,12 +44,16 @@ public class MealPlanningGoalsFragment extends Fragment {
     @Override
     public void onDestroyView() {
 
-        SharedPreferences goals = getActivity().getSharedPreferences("goals", Context.MODE_PRIVATE);
-
+        SharedPreferences goals = PreferenceManager.getDefaultSharedPreferences(getContext());
         SharedPreferences.Editor editor = goals.edit();
+
+        Set<String> s = new HashSet<>();
         for (Map.Entry<String,Boolean> f: mealPlanningGoalsViewModelViewModel.mealPlanningGoals.entrySet()) {
-            editor.putBoolean(f.getKey(), f.getValue());
+            if (f.getValue()) {
+                s.add(f.getKey());
+            }
         }
+        editor.putStringSet("MealPlanGoals", s);
         editor.apply();
 
         super.onDestroyView();

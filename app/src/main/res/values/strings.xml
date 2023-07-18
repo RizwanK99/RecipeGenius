@@ -7,6 +7,7 @@
     <string name="title_myRecipes">MyRecipes</string>
     <string name="title_todaysPicks">TodaysPicks</string>
     <string name="weight_goal">WeightGoal</string>
+    <string name="mealplan_goals">MealPlanGoals</string>
     <string name="back"><![CDATA[<-]]></string>
     <string name="forward"><![CDATA[->]]></string>
 </resources>
