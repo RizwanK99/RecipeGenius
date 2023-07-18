@@ -1,15 +1,13 @@
 package com.example.recipegenius.ui.questionnaire;
 
-import android.content.Context;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.recipegenius.ui.weightgoals.WeightGoalsFragment;
-
-import java.util.List;
+import com.example.recipegenius.ui.questionnaire.dietaryrestrictions.DietaryRestrictionsFragment;
+import com.example.recipegenius.ui.questionnaire.mealplanninggoals.MealPlanningGoalsFragment;
+import com.example.recipegenius.ui.questionnaire.weightgoals.WeightGoalsFragment;
 
 public class QuestionnaireFragmentStateAdapter extends FragmentStateAdapter {
 
@@ -26,9 +24,9 @@ public class QuestionnaireFragmentStateAdapter extends FragmentStateAdapter {
             case 1:
                 return new WeightGoalsFragment();
             case 2:
-                return new QuestionnaireWelcomeScreenFragment();
+                return new DietaryRestrictionsFragment();
             case 3:
-                return new QuestionnaireWelcomeScreenFragment();
+                return new MealPlanningGoalsFragment();
         }
         return null;
     }
