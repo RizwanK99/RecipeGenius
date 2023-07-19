@@ -28,7 +28,6 @@ public class CalendarFragment extends Fragment {
         binding = FragmentCalendarBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-
         return root;
     }
 
@@ -36,7 +35,6 @@ public class CalendarFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-
 
     }
 

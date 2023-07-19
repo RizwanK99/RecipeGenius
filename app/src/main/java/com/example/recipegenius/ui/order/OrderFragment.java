@@ -15,8 +15,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.recipegenius.R;
+import com.example.recipegenius.databinding.FragmentCalendarBinding;
 import com.example.recipegenius.databinding.FragmentHomeBinding;
 import com.example.recipegenius.databinding.FragmentOrderBinding;
+import com.example.recipegenius.ui.calendar.CalendarViewModel;
 import com.example.recipegenius.ui.home.HomeViewModel;
 
 public class OrderFragment extends Fragment {
@@ -31,27 +33,6 @@ public class OrderFragment extends Fragment {
         binding = FragmentOrderBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        /*Button recipebutton = (Button) root.findViewById(R.id.myRecipesButton);
-        recipebutton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.navigation_my_recipes);
-            }
-        });
-
-        Button picksbutton = (Button) root.findViewById(R.id.todaysPicksButton);
-        picksbutton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.navigation_todays_picks);
-            }
-        });
-
-        Button filterbutton = (Button) root.findViewById(R.id.editFiltersButton);
-        filterbutton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.navigation_filters);
-            }
-        });*/
-
         return root;
     }
 
@@ -59,6 +40,8 @@ public class OrderFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+
+
     }
 
 }

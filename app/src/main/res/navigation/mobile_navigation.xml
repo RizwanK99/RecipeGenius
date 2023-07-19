@@ -51,4 +51,9 @@
             android:label="@string/title_myRecipes"
             tools:layout="@layout/fragment_myrecipes" />
     </navigation>
+    <fragment
+        android:id="@+id/navigation_order"
+        android:name="com.example.recipegenius.ui.order.OrderFragment"
+        android:label="Order Ingredients"
+        tools:layout="@layout/fragment_order" />
 </navigation>
