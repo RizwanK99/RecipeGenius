@@ -20,14 +20,16 @@ import androidx.navigation.Navigation;
 import com.example.recipegenius.R;
 import com.example.recipegenius.databinding.FragmentFiltersBinding;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class FiltersFragment extends Fragment {
 
@@ -76,7 +78,6 @@ public class FiltersFragment extends Fragment {
 //        allergySearchView = (SearchView) root.findViewById(R.id.allergyFilterSearch);
 //        allergySuggestions = (ListView) root.findViewById(R.id.allergySuggestions);
 
-
         Button applyFiltersButton = (Button) root.findViewById(R.id.applyFiltersButton);
         applyFiltersButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -89,23 +90,6 @@ public class FiltersFragment extends Fragment {
                 }
                 editor.apply();
 
-                //TODO: change Keto to Ketogenic for API
-                //API test
-//                Map<String, ?> dietMap = dietFilters.getAll();
-//                ArrayList<String> trueDietFilters = new ArrayList<String>();
-//                for (Map.Entry<String, ?> entry : dietMap.entrySet()) {
-//                    if ((Boolean)entry.getValue() == true)
-//                        trueDietFilters.add(entry.getKey());
-//                }
-//                //TODO: Async Task
-//                String url = "https://api.spoonacular.com/recipes/complexSearch?excludeCuisine=" + String.join(",", trueDietFilters);
-//                try {
-//                    getRequest(url);
-//                } catch (IOException e) {
-//                    throw new RuntimeException(e);
-//                }
-//                System.out.println(url);
-
 
                 editor = allergyFilters.edit();
                 for (Map.Entry<String,Boolean> f: filtersViewModel.allergy_filters.entrySet()) {
@@ -113,8 +97,30 @@ public class FiltersFragment extends Fragment {
                 }
                 editor.apply();
 
+                //TODO: change Filters to work with API
+                //API test
+                Map<String, ?> dietMap = dietFilters.getAll();
+                ArrayList<String> trueDietFilters = new ArrayList<String>();
+                for (Map.Entry<String, ?> entry : dietMap.entrySet()) {
+                    if ((Boolean)entry.getValue() == true)
+                        trueDietFilters.add(entry.getKey());
+                }
+
+                Map<String, ?> AllergyMap = allergyFilters.getAll();
+                ArrayList<String> trueAllergyFilters = new ArrayList<String>();
+                for (Map.Entry<String, ?> entry : AllergyMap.entrySet()) {
+                    if ((Boolean)entry.getValue() == true)
+                        trueAllergyFilters.add(entry.getKey());
+                }
+
+                try {
+                    GetRequest("https://api.spoonacular.com/recipes/complexSearch?apiKey=ebe7fae3f40b431dab2335358eab0c38&excludeCuisine=" + String.join(",", trueDietFilters) + "&excludeIngredients=" + String.join(",", trueAllergyFilters));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
                 // navigate back to home
-                Navigation.findNavController(v).navigate(R.id.navigation_home);
+                Navigation.findNavController(v).navigateUp();
             }
         });
 
@@ -127,16 +133,25 @@ public class FiltersFragment extends Fragment {
         binding = null;
     }
 
-    private static void getRequest(String url) throws IOException {
-        URL getURL = new URL(url);
-        HttpURLConnection con = (HttpURLConnection) getURL.openConnection();
-        con.setRequestMethod("GET");
-        con.setRequestProperty("Content-Type", "application/json");
-        //TODO: better API key implementation
-        con.setRequestProperty("x-api-key", "ebe7fae3f40b431dab2335358eab0c38");
-        if (con.getResponseCode() == HttpURLConnection.HTTP_OK) {
-            System.out.println("OK");
-        }
+    public void GetRequest(String url) throws IOException{
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+
+        client.newCall(request)
+                .enqueue(new Callback() {
+                    @Override
+                    public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    @Override
+                    public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                        String res = response.body().string();
+                        System.out.println(res);
+                    }
+                });
     }
 
 

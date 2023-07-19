@@ -10,12 +10,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.recipegenius.MainActivity;
 import com.example.recipegenius.R;
-import com.example.recipegenius.ui.weightgoals.WeightGoalsFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -29,8 +27,6 @@ public class QuestionnaireActivity extends AppCompatActivity {
     int position = 0;
     Button btnGetStarted;
     Animation btnAnim;
-    WeightGoalsFragment wgf;
-    FragmentManager fm = getSupportFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +47,6 @@ public class QuestionnaireActivity extends AppCompatActivity {
 //            startActivity(mainActivity);
 //            finish();
 //        }
-
-//        mList.add(new QuestionnaireItem("Do you have any dietary restrictions?"));
-//        mList.add(new QuestionnaireItem("What are your meal-planning goals?"));
 
         mAdapter = new QuestionnaireFragmentStateAdapter(this);
 

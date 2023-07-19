@@ -23,6 +23,12 @@
         android:label="@string/title_todaysPicks"
         tools:layout="@layout/fragment_todayspicks" />
 
+    <fragment
+        android:id="@+id/navigation_recipe_page"
+        android:name="com.example.recipegenius.ui.recipepage.RecipePageFragment"
+        android:label="@string/title_recipePage"
+        tools:layout="@layout/fragment_recipepage" />
+
     <navigation android:id="@+id/navigation_top_home"
         app:startDestination="@id/navigation_home">
         <fragment
@@ -45,4 +51,9 @@
             android:label="@string/title_myRecipes"
             tools:layout="@layout/fragment_myrecipes" />
     </navigation>
+    <fragment
+        android:id="@+id/navigation_order"
+        android:name="com.example.recipegenius.ui.order.OrderFragment"
+        android:label="Order Ingredients"
+        tools:layout="@layout/fragment_order" />
 </navigation>

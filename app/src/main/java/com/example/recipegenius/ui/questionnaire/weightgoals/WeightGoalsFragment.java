@@ -1,4 +1,4 @@
-package com.example.recipegenius.ui.weightgoals;
+package com.example.recipegenius.ui.questionnaire.weightgoals;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
 
 import com.example.recipegenius.R;
 import com.example.recipegenius.databinding.FragmentWeightGoalsBinding;
@@ -46,9 +47,9 @@ public class WeightGoalsFragment extends Fragment {
     @Override
     public void onDestroyView() {
 
-        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(getString(R.string.weight_goal), weightGoal);
+        editor.putString(getString(R.string.weight_goal), Integer.toString(weightGoal));
         editor.apply();
 
         super.onDestroyView();

@@ -1,44 +1,46 @@
 package com.example.recipegenius.ui.settings;
 
 import android.os.Bundle;
+
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.Switch;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
+import androidx.preference.PreferenceFragmentCompat;
 
 import com.example.recipegenius.R;
 import com.example.recipegenius.databinding.FragmentSettingsBinding;
 
-
-public class SettingsFragment extends Fragment {
+public class SettingsFragment extends PreferenceFragmentCompat {
 
     private FragmentSettingsBinding binding;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        SettingsViewModel homeViewModel =
-                new ViewModelProvider(this).get(SettingsViewModel.class);
+    // public View onCreateView(@NonNull LayoutInflater inflater,
+    //         ViewGroup container, Bundle savedInstanceState) {
+    //     SettingsViewModel settingsViewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
+    //     binding = FragmentSettingsBinding.inflate(inflater, container, false);
+    //     View root = binding.getRoot();
+    //     Switch simpleSwitch = (Switch) root.findViewById(R.id.notificationsPreferance);
+    //     System.out.println(simpleSwitch);
 
-        binding = FragmentSettingsBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+    //     SharedPreferences notificationsPreferance = getActivity().getSharedPreferences("notificationsPreferance",
+    //             Context.MODE_PRIVATE);
+    //     SharedPreferences.Editor editor = notificationsPreferance.edit();
 
+    //     editor.putInt("enabled", 0);
+    //     editor.apply();
+    //     return root;
 
-        return root;
-    }
+    // }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-
-
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        addPreferencesFromResource(R.xml.preferences);
     }
-
 
 }

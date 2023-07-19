@@ -6,9 +6,9 @@
     <string name="title_filters">Filters</string>
     <string name="title_myRecipes">MyRecipes</string>
     <string name="title_todaysPicks">TodaysPicks</string>
-    <string name="diet_filter_search_hint">Search Diet Filters</string>
-    <string name="allergy_filter_search_hint">Search Allergy Filters</string>
+    <string name="title_recipePage">RecipePage</string>
     <string name="weight_goal">WeightGoal</string>
+    <string name="mealplan_goals">MealPlanGoals</string>
     <string name="back"><![CDATA[<-]]></string>
     <string name="forward"><![CDATA[->]]></string>
 </resources>
