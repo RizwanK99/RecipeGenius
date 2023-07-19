@@ -17,4 +17,5 @@
 | 2023/07/16 | 3.50 h |         |        |         |        |         |   Implementing Features   |
 | 2023/07/17 | 9.50 h |         |        |         | 3.00 h |         |   Implementing Features   |
 | 2023/07/17 |        |         |        |         | 2.00 h |         |    D5: Design Patterns    |
-| 2023/07/18 | 2.75 h |         |        |         | 8.00 h |         |   Implementing Features   |
+| 2023/07/18 | 3.00 h |         |        |         | 8.00 h |         |   Implementing Features   |
+| 2023/07/18 | 2.00 h |         |        |         |        |         |    D5: Design Patterns    |
