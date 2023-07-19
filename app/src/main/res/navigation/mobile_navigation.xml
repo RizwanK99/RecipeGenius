@@ -51,9 +51,17 @@
             android:label="@string/title_myRecipes"
             tools:layout="@layout/fragment_myrecipes" />
     </navigation>
+    <navigation android:id="@+id/navigation_top_order"
+        app:startDestination="@id/navigation_order">
+        <fragment
+            android:id="@+id/navigation_order"
+            android:name="com.example.recipegenius.ui.order.OrderFragment"
+            android:label="Order"
+            tools:layout="@layout/fragment_order" />
+    </navigation>
     <fragment
-        android:id="@+id/navigation_order"
-        android:name="com.example.recipegenius.ui.order.OrderFragment"
-        android:label="Order Ingredients"
-        tools:layout="@layout/fragment_order" />
+        android:id="@+id/navigation_inventory"
+        android:name="com.example.recipegenius.ui.inventory.InventoryFragment"
+        android:label="Inventory"
+        tools:layout="@layout/fragment_inventory" />
 </navigation>

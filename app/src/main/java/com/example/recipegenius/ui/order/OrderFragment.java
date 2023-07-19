@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -15,11 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.recipegenius.R;
-import com.example.recipegenius.databinding.FragmentCalendarBinding;
-import com.example.recipegenius.databinding.FragmentHomeBinding;
 import com.example.recipegenius.databinding.FragmentOrderBinding;
-import com.example.recipegenius.ui.calendar.CalendarViewModel;
-import com.example.recipegenius.ui.home.HomeViewModel;
 
 public class OrderFragment extends Fragment {
 
@@ -32,6 +27,13 @@ public class OrderFragment extends Fragment {
 
         binding = FragmentOrderBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        Button inventoryButton = (Button) root.findViewById(R.id.inventory_button);
+        inventoryButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.navigation_inventory);
+            }
+        });
 
         return root;
     }
