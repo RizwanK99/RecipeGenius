@@ -11,7 +11,7 @@ public class IngredientViewModel extends ViewModel {
     boolean isLiquid = false;
     MeasureUnit unit = null;
 
-    private static HashMap<String,IngredientViewModel> allIngredients;
+    public static HashMap<String,IngredientViewModel> allIngredients;
 
     //Factory constructor
     public static IngredientViewModel valueOf(String name, double amount, MeasureUnit unit){

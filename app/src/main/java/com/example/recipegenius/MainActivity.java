@@ -2,12 +2,7 @@ package com.example.recipegenius;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.recipegenius.database.DBHandler;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -22,16 +17,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.recipegenius.databinding.ActivityMainBinding;
-
-import java.lang.reflect.Array;
-import java.time.LocalDate;
-import java.time.YearMonth;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 

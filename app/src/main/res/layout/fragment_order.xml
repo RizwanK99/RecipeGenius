@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_weight="1"
-            android:text="Ingredients"
+            android:text="Order Ingredients"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textStyle="bold"
@@ -39,7 +39,7 @@
             android:textAlignment="center" />
 
         <Button
-            android:id="@+id/inventory_button"
+            android:id="@+id/order_button"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginLeft="50dp"
@@ -49,7 +49,7 @@
             android:text="Fill New Cart " />
 
         <Button
-            android:id="@+id/order_button"
+            android:id="@+id/inventory_button"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginLeft="50dp"
