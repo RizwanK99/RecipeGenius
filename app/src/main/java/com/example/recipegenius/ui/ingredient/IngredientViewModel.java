@@ -9,12 +9,12 @@ public class IngredientViewModel extends ViewModel {
     public String name = "";
     private double quantity = 0;
     boolean isLiquid = false;
-    MeasureUnit unit = null;
+    MeasureUnit unit = MeasureUnit.GRAM;
 
-    public static HashMap<String,IngredientViewModel> allIngredients;
+    //private static HashMap<String,IngredientViewModel> allIngredients;
 
-    //Factory constructor
-    public static IngredientViewModel valueOf(String name, double amount, MeasureUnit unit){
+    //Factory constructor (unused)
+    /*public static IngredientViewModel valueOf(String name, double amount, MeasureUnit unit){
         IngredientViewModel ingredient = null;
 
         if(allIngredients.containsKey(name)){
@@ -27,32 +27,32 @@ public class IngredientViewModel extends ViewModel {
         }
 
         return ingredient;
-    }
+    }*/
 
     //Normal constructor
-    private IngredientViewModel(String name, double amount, MeasureUnit unit){
+    public IngredientViewModel(String name, double amount, MeasureUnit unit){
         this.name = name;
         this.quantity = convertValue(amount, unit);
     }
 
-    double addQuantity(double amount, MeasureUnit unit){
-        getStatic(this.name).quantity += convertValue(amount,unit);
+    public double addQuantity(double amount, MeasureUnit unit){
+        this.quantity += convertValue(amount,unit);
 
         return this.quantity;
     }
 
     double subtractQuantity(double amount, MeasureUnit unit){
-        if(getStatic(this.name).quantity - convertValue(amount,unit) < 0){
+        if(this.quantity - convertValue(amount,unit) < 0){
             return -1;
         }
 
-        getStatic(this.name).quantity -= convertValue(amount,unit);
+        this.quantity -= convertValue(amount,unit);
 
         return this.quantity;
     }
 
     double getQuantityGrams(){
-        return getStatic(this.name).getQuantityGrams();
+        return this.quantity;
     }
 
     double convertValue(double amount, MeasureUnit unit){
@@ -77,7 +77,7 @@ public class IngredientViewModel extends ViewModel {
         return amount;
     }
 
-    private static IngredientViewModel getStatic(String name){
+    /*private static IngredientViewModel getStatic(String name){
         return allIngredients.get(name);
-    }
+    }*/
 }
