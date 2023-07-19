@@ -33,7 +33,9 @@
         <SwitchPreferenceCompat
             app:key="notifications"
             app:title="Enable message notifications"
-            android:icon="@drawable/notifications"/>
+            android:icon="@drawable/notifications"
+            android:id="@+id/notificationsPreferance"
+            />
 
     </PreferenceCategory>
 
