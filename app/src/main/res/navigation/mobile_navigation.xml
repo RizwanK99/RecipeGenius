@@ -18,16 +18,16 @@
         tools:layout="@layout/fragment_settings" />
 
     <fragment
-        android:id="@+id/navigation_my_recipes"
-        android:name="com.example.recipegenius.ui.myrecipes.MyRecipesFragment"
-        android:label="@string/title_myRecipes"
-        tools:layout="@layout/fragment_myrecipes" />
-
-    <fragment
         android:id="@+id/navigation_todays_picks"
         android:name="com.example.recipegenius.ui.todayspicks.TodaysPicksFragment"
         android:label="@string/title_todaysPicks"
         tools:layout="@layout/fragment_todayspicks" />
+
+    <fragment
+        android:id="@+id/navigation_recipe_page"
+        android:name="com.example.recipegenius.ui.recipepage.RecipePageFragment"
+        android:label="@string/title_recipePage"
+        tools:layout="@layout/fragment_recipepage" />
 
     <navigation android:id="@+id/navigation_top_home"
         app:startDestination="@id/navigation_home">
@@ -45,5 +45,10 @@
             android:name="com.example.recipegenius.ui.filters.FiltersFragment"
             android:label="@string/title_filters"
             tools:layout="@layout/fragment_filters" />
+        <fragment
+            android:id="@+id/navigation_my_recipes"
+            android:name="com.example.recipegenius.ui.myrecipes.MyRecipesFragment"
+            android:label="@string/title_myRecipes"
+            tools:layout="@layout/fragment_myrecipes" />
     </navigation>
 </navigation>

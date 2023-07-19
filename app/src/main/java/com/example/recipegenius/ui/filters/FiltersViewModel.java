@@ -13,7 +13,6 @@ import java.util.Map;
 
 public class FiltersViewModel extends ViewModel {
 
-    private final MutableLiveData<String> mText;
     public Map<String,Boolean> restrictions_filters = new HashMap<String,Boolean>();
     public Map<String,Boolean> allergy_filters = new HashMap<String,Boolean>();
 
@@ -44,14 +43,5 @@ public class FiltersViewModel extends ViewModel {
 
 
     public FiltersViewModel() {
-        mText = new MutableLiveData<>();
-        restrictions_filters.put(VEGAN, true);
-        restrictions_filters.put(VEGETARIAN, true);
-        allergy_filters.put(PEANUTS, true);
-        allergy_filters.put(SHELLFISH, true);
-    }
-
-    public LiveData<String> getText() {
-        return mText;
     }
 }
