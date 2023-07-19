@@ -12,7 +12,8 @@
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Back Home" />
+        android:text="Back Home"
+        android:onClick="backWeekHome"/>
 
     <LinearLayout
         android:layout_width="match_parent"

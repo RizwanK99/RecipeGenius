@@ -86,4 +86,8 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
          startActivity(new Intent(this,EventEditActivity.class));
 
     }
+
+    public void backWeekHome(View view) {
+        startActivity(new Intent(this,MainActivity2.class));
+    }
 }
