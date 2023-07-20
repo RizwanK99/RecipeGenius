@@ -4,6 +4,7 @@ import static com.example.recipegenius.ui.ingredient.MeasureUnit.GRAM;
 
 import androidx.lifecycle.ViewModel;
 
+import com.example.recipegenius.ui.ingredient.IngredientModel;
 import com.example.recipegenius.ui.ingredient.IngredientViewModel;
 import com.example.recipegenius.ui.ingredient.MeasureUnit;
 
@@ -19,7 +20,7 @@ public class InventoryViewModel extends ViewModel {
         inventory.addIngredient(name,amount,MeasureUnit.GRAM);
     }
 
-    public HashMap<String, IngredientViewModel> getInventory(){
+    public HashMap<String, IngredientModel> getInventory(){
         return inventory;
     }
 }
