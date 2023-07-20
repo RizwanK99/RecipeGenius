@@ -55,8 +55,6 @@ public class HomeFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-
-
     }
 
 
