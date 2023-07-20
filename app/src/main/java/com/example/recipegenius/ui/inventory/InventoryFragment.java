@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +17,8 @@ import com.example.recipegenius.R;
 
 public class InventoryFragment extends Fragment {
 
-    private InventoryViewModel mViewModel;
+    private InventoryViewModel inventoryViewModel;
+    private RecyclerView recyclerView;
 
     public static InventoryFragment newInstance() {
         return new InventoryFragment();
@@ -31,7 +33,7 @@ public class InventoryFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(InventoryViewModel.class);
+        inventoryViewModel = new ViewModelProvider(this).get(InventoryViewModel.class);
         // TODO: Use the ViewModel
     }
 
