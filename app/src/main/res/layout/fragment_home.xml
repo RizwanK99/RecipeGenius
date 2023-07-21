@@ -6,9 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".exam"
+        >
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,7 +32,8 @@
             android:gravity="center"
             android:text="Welcome to Recipe Genius"
             android:textSize="24sp"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
@@ -31,17 +42,10 @@
             android:id="@+id/myRecipesButton"
             android:layout_width="match_parent"
             android:layout_height="80dp"
+            android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:text="My Recipes" />
-
-        <Button
-            android:id="@+id/todaysPicksButton"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="Today's Picks" />
 
         <Button
             android:id="@+id/editFiltersButton"
@@ -50,6 +54,45 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:text="Edit My Filters" />
+
+        <TextView
+            android:id="@+id/textHomeTitleTodays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Today's Picks:"
+            android:textSize="24sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="left"
+                android:layout_marginBottom="20dp"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:nestedScrollingEnabled="true"
+                    android:id="@+id/recyclerViewToday"
+                    android:layout_width="match_parent"
+                    android:overScrollMode="never"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+            </LinearLayout>
+
     </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

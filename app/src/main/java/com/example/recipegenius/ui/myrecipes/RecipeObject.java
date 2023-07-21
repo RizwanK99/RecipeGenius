@@ -9,7 +9,7 @@ public class RecipeObject {
     String[] tags;
     String imageURL;
 
-    RecipeObject(String name, String[] ingredients, String[] instructions, String[] tags, String imageURL) {
+    public RecipeObject(String name, String[] ingredients, String[] instructions, String[] tags, String imageURL) {
         this.name = name;
         this.ingredients = ingredients;
         this.instructions = instructions;
