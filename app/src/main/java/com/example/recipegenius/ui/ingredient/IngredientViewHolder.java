@@ -10,16 +10,17 @@ import com.example.recipegenius.R;
 import com.squareup.picasso.Picasso;
 
 public class IngredientViewHolder extends RecyclerView.ViewHolder{
-    TextView ingredientName;
-    TextView ingredientAmount;
-    TextView ingredientUnit;
+    public TextView ingredientName;
+    public TextView ingredientAmount;
+    public TextView ingredientUnit;
     View view;
 
     public IngredientViewHolder(View itemView)  {
         super(itemView);
+        ingredientName = (TextView) itemView.findViewById(R.id.ing_name);
         //ingredientName = (TextView) itemView.findViewById();
 
-        String imageUri = "https://i.imgur.com/tGbaZCY.jpg";
+        ingredientAmount = (TextView) itemView.findViewById(R.id.ing_amount);
 
         view = itemView;
     }

@@ -2,9 +2,9 @@ package com.example.recipegenius.ui.ingredient;
 
 public class IngredientModel {
     public String name = "";
-    private double quantity = 0;
-    boolean isLiquid = false;
-    MeasureUnit unit = MeasureUnit.GRAM;
+    public double quantity = 0;
+    public boolean isLiquid = false;
+    public MeasureUnit unit = MeasureUnit.GRAM;
 
     //private static HashMap<String,IngredientViewModel> allIngredients;
 

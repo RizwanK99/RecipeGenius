@@ -24,7 +24,6 @@ public class InventoryAdapter extends RecyclerView.Adapter<IngredientViewHolder>
     ClickListener listener;
 
     public InventoryAdapter(List<IngredientModel> list, ClickListener listener, Context context) {
-        super();
         this.list = list;
         this.listener = listener;
         this.context = context;
@@ -46,7 +45,10 @@ public class InventoryAdapter extends RecyclerView.Adapter<IngredientViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull IngredientViewHolder holder, int position) {
-
+        int index = holder.getAdapterPosition();
+        holder.ingredientName.setText(list.get(position).name);
+        holder.ingredientAmount.setText(String.valueOf(list.get(position).quantity));
+        holder.ingredientUnit.setText(list.get(position).unit.toString());
     }
 
     @Override

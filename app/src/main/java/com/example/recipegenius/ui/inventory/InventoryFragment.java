@@ -45,6 +45,7 @@ public class InventoryFragment extends Fragment {
             recyclerView = view.findViewById(R.id.ingredient_list);
 
             inventory.addIngredient("Salt",0.5);
+            inventory.addIngredient("Potato",500);
 
             ClickListener listener = new ClickListener() {
                 @Override
@@ -56,7 +57,7 @@ public class InventoryFragment extends Fragment {
 
             adapter = new InventoryAdapter(inventory.toList(), listener, getContext());
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-            //recyclerView.setAdapter(adapter);
+            recyclerView.setAdapter(adapter);
             return view;
     }
 

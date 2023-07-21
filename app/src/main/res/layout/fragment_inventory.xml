@@ -13,7 +13,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="122dp"
             android:orientation="horizontal">
 
             <TextView
@@ -34,12 +34,14 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="50dp"
                 android:text="Add" />
+
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ingredient_list"
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="633dp" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
