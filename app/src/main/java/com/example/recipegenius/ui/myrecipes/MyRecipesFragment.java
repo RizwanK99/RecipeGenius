@@ -42,6 +42,7 @@ public class MyRecipesFragment extends Fragment {
 
         SharedPreferences numRecipes = context.getSharedPreferences("numRecipes", Context.MODE_PRIVATE);
         int num = numRecipes.getInt("len", 0);
+        System.out.println("Display Page");
         System.out.println("num: "+num);
 
         for (int i = 0; i < num; i++){
@@ -51,7 +52,6 @@ public class MyRecipesFragment extends Fragment {
             RecipeObject recipe = gson.fromJson(json, RecipeObject.class);
             System.out.println("recipe: ");
             System.out.println(json);
-            System.out.println(recipe);
 
             recipeList.add(recipe);
 

@@ -132,7 +132,7 @@ public class FiltersFragment extends Fragment {
                             "https://api.spoonacular.com/recipes/complexSearch?apiKey=ebe7fae3f40b431dab2335358eab0c38&excludeCuisine="
                                     + String.join(",", trueDietFilters) + "&excludeIngredients="
                                     + String.join(",", trueAllergyFilters)
-                                    + "&number=1&instructionsRequired=true&addRecipeInformation=true&fillIngredients=true");
+                                    + "&number=20&instructionsRequired=true&addRecipeInformation=true&fillIngredients=true");
 
                 } catch (IOException e) {
                     throw new RuntimeException(e);
@@ -171,6 +171,7 @@ public class FiltersFragment extends Fragment {
                             JSONObject obj = new JSONObject(response.body().string());
                             JSONArray arr = obj.getJSONArray("results");
                             ArrayList<RecipeObject> recipeList = new ArrayList<RecipeObject>();
+                            System.out.println("API response:");
                             System.out.println(arr.length());
                             SharedPreferences arrLen = context.getSharedPreferences("numRecipes",
                                     Context.MODE_PRIVATE);
