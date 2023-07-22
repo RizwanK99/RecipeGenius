@@ -11,15 +11,15 @@
 | 2023/06/22 | 1.00 h | 1.00 h  | 1.00 h | 1.00 h  | 1.00 h | 1.00 h  | D3: Prototype Demo (Plan) |
 | 2023/06/24 | 9.50 h | 4.00 h  | 4.00 h | 4.00 h  | 4.00 h | 2.50 h  |    D3: Prototype Demo     |
 | 2023/06/25 | 4.75 h |         | 2.00 h | 8.00 h  |        | 2.00 h  |    D3: Prototype Demo     |
-| 2023/06/26 | 4.00 h |         |        | 4.00 h  |        | 2.00 h  |   Implementing Features   |
+| 2023/06/26 | 4.00 h | 3.00 h  |        | 4.00 h  |        | 2.00 h  |   Implementing Features   |
 | 2023/06/30 | 0.50 h |         | 0.50 h | 1.00 h  | 2.00 h |         |  D3: Prototype Demo Doc   |
-| 2023/07/13 | 2.50 h |         | 2.50 h | 1.00 h  | 3.50 h |         | D4: Architectural Styles  |
+| 2023/07/13 | 2.50 h | 4.00 h  | 2.50 h | 1.00 h  | 3.50 h |         | D4: Architectural Styles  |
 | 2023/07/16 | 3.50 h |         |        |         |        |         |   Implementing Features   |
 | 2023/07/17 | 9.50 h |         |        | 0.50 h  | 3.00 h |         |   Implementing Features   |
-| 2023/06/25 | 4.75 h |         | 2.00 h |         |        | 2.00 h  |    D3: Prototype Demo     |
+| 2023/06/25 | 4.75 h | 1.00 h  | 2.00 h |         |        | 2.00 h  |    D3: Prototype Demo     |
 | 2023/06/26 | 4.00 h |         |        |         |        | 2.00 h  |   Implementing Features   |
-| 2023/06/30 | 0.50 h |         | 0.50 h |         | 2.00 h | 2.00 h  |  D3: Prototype Demo Doc   |
-| 2023/07/13 | 2.50 h |         | 2.50 h |         | 3.50 h | 3.00 h  | D4: Architectural Styles  |
+| 2023/06/30 | 0.50 h | 1.00 h  | 0.50 h |         | 2.00 h | 2.00 h  |  D3: Prototype Demo Doc   |
+| 2023/07/13 | 2.50 h | 2.00 h  | 2.50 h |         | 3.50 h | 3.00 h  | D4: Architectural Styles  |
 | 2023/07/16 | 3.50 h |         |        |         |        | 2.00 h  |   Implementing Features   |
 | 2023/07/17 | 9.50 h |         |        |         | 3.00 h | 5.00 h  |   Implementing Features   |
 | 2023/07/17 |        |         |        |         | 2.00 h |         |    D5: Design Patterns    |
@@ -27,5 +27,6 @@
 | 2023/07/18 | 2.00 h |         |        |         |        |         |    D5: Design Patterns    |
 | 2023/07/19 |        |         |        |         |        | 2.00 h  |    D5: Design Patterns    |
 | 2023/07/19 |        |         |        |         | 1.00 h |         |   Implementing Features   |
-| 2023/07/20 | 1.25 h |         |        |         | 0.50 h |         |    D5: Design Patterns    |
+| 2023/07/20 | 1.25 h | 0.50 h  |        |         | 0.50 h |         |    D5: Design Patterns    |
 | 2023/07/21 |        |         |        |         | 3.00 h |         |   Implementing Features   |
+| 2023/07/22 |        | 7.00 h  |        |         | 3.00 h |         |   Implementing Features   |
