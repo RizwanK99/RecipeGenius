@@ -74,7 +74,7 @@ public class RecipePageFragment extends Fragment implements TextToSpeech.OnInitL
 
         if (set_ingr != null) {
             for (int i = 0; i < set_ingr.size(); i++) {
-                ingr += i+1 + ". " + set_ingr.toArray()[i] + "\n";
+                ingr += set_ingr.toArray()[i] + "\n";
             }
         }
 
@@ -89,6 +89,7 @@ public class RecipePageFragment extends Fragment implements TextToSpeech.OnInitL
                 tags += s + ", ";
             }
         }
+        tags = tags.substring(0, tags.length() - 2);
 
         TextView ingrDisp = (TextView) root.findViewById(R.id.recipePageIngredients);
         ingrDisp.setText(ingr);
