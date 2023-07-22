@@ -35,6 +35,13 @@ public class OrderFragment extends Fragment {
             }
         });
 
+        Button orderButton = (Button) root.findViewById(R.id.order_button);
+        orderButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.navigation_cart);
+            }
+        });
+
         return root;
     }
 

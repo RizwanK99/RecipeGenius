@@ -133,8 +133,8 @@
                 android:id="@+id/previousButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_weight="1"
                 android:text="Previous\nStep" />
 
@@ -142,8 +142,8 @@
                 android:id="@+id/currentButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_weight="1"
                 android:text="Current Step" />
 
@@ -151,8 +151,8 @@
                 android:id="@+id/nextButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_weight="1"
                 android:text="Next\nStep" />
         </LinearLayout>

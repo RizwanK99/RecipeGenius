@@ -1,6 +1,7 @@
 package com.example.recipegenius.ui.inventory;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +46,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<IngredientViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull IngredientViewHolder holder, int position) {
-        int index = holder.getAdapterPosition();
+        //int index = holder.getAdapterPosition();
         holder.ingredientName.setText(list.get(position).name);
         holder.ingredientAmount.setText(String.valueOf(list.get(position).quantity));
         holder.ingredientUnit.setText(list.get(position).unit.toString());
@@ -53,6 +54,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<IngredientViewHolder>
 
     @Override
     public int getItemCount() {
-        return 0;
+        Log.d("Size",String.valueOf(list.size()+1));
+        return list.size();
     }
 }

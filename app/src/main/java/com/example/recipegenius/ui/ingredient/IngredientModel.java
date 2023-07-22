@@ -27,7 +27,8 @@ public class IngredientModel {
     //Normal constructor
     public IngredientModel(String name, double amount, MeasureUnit unit){
         this.name = name;
-        this.quantity = convertValue(amount, unit);
+        this.quantity = amount;
+        this.unit = unit;
     }
 
     public double addQuantity(double amount, MeasureUnit unit){
