@@ -31,6 +31,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+import org.json.*;
+
 public class FiltersFragment extends Fragment {
 
     private FragmentFiltersBinding binding;
@@ -60,61 +62,68 @@ public class FiltersFragment extends Fragment {
         filtersViewModel.restrictions_filters = (Map<String, Boolean>) dietFilters.getAll();
         filtersViewModel.allergy_filters = (Map<String, Boolean>) allergyFilters.getAll();
 
-        //TODO: implement search bars (suggestions, selection, etc.)
-        /*dietSearchView = (SearchView) root.findViewById(R.id.dietFilterSearch);
-        dietAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_expandable_list_item_1, dietList);
-        dietSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
+        // TODO: implement search bars (suggestions, selection, etc.)
+        /*
+         * dietSearchView = (SearchView) root.findViewById(R.id.dietFilterSearch);
+         * dietAdapter = new ArrayAdapter<>(getContext(),
+         * android.R.layout.simple_expandable_list_item_1, dietList);
+         * dietSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+         * 
+         * @Override
+         * public boolean onQueryTextSubmit(String s) {
+         * return false;
+         * }
+         * 
+         * @Override
+         * public boolean onQueryTextChange(String s) {
+         * return false;
+         * }
+         * });
+         */
 
-            @Override
-            public boolean onQueryTextChange(String s) {
-                return false;
-            }
-        });*/
-
-//        allergySearchView = (SearchView) root.findViewById(R.id.allergyFilterSearch);
-//        allergySuggestions = (ListView) root.findViewById(R.id.allergySuggestions);
+        // allergySearchView = (SearchView) root.findViewById(R.id.allergyFilterSearch);
+        // allergySuggestions = (ListView) root.findViewById(R.id.allergySuggestions);
 
         Button applyFiltersButton = (Button) root.findViewById(R.id.applyFiltersButton);
         applyFiltersButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 SharedPreferences dietFilters = getActivity().getSharedPreferences("dietFilters", Context.MODE_PRIVATE);
-                SharedPreferences allergyFilters = getActivity().getSharedPreferences("allergyFilters", Context.MODE_PRIVATE);
+                SharedPreferences allergyFilters = getActivity().getSharedPreferences("allergyFilters",
+                        Context.MODE_PRIVATE);
 
                 SharedPreferences.Editor editor = dietFilters.edit();
-                for (Map.Entry<String,Boolean> f: filtersViewModel.restrictions_filters.entrySet()) {
+                for (Map.Entry<String, Boolean> f : filtersViewModel.restrictions_filters.entrySet()) {
                     editor.putBoolean(f.getKey(), f.getValue());
                 }
                 editor.apply();
-
 
                 editor = allergyFilters.edit();
-                for (Map.Entry<String,Boolean> f: filtersViewModel.allergy_filters.entrySet()) {
+                for (Map.Entry<String, Boolean> f : filtersViewModel.allergy_filters.entrySet()) {
                     editor.putBoolean(f.getKey(), f.getValue());
                 }
                 editor.apply();
 
-                //TODO: change Filters to work with API
-                //API test
+                // TODO: change Filters to work with API
+                // API test
                 Map<String, ?> dietMap = dietFilters.getAll();
                 ArrayList<String> trueDietFilters = new ArrayList<String>();
                 for (Map.Entry<String, ?> entry : dietMap.entrySet()) {
-                    if ((Boolean)entry.getValue() == true)
+                    if ((Boolean) entry.getValue() == true)
                         trueDietFilters.add(entry.getKey());
                 }
 
                 Map<String, ?> AllergyMap = allergyFilters.getAll();
                 ArrayList<String> trueAllergyFilters = new ArrayList<String>();
                 for (Map.Entry<String, ?> entry : AllergyMap.entrySet()) {
-                    if ((Boolean)entry.getValue() == true)
+                    if ((Boolean) entry.getValue() == true)
                         trueAllergyFilters.add(entry.getKey());
                 }
 
                 try {
-                    GetRequest("https://api.spoonacular.com/recipes/complexSearch?apiKey=ebe7fae3f40b431dab2335358eab0c38&excludeCuisine=" + String.join(",", trueDietFilters) + "&excludeIngredients=" + String.join(",", trueAllergyFilters));
+                    GetRequest(
+                            "https://api.spoonacular.com/recipes/complexSearch?apiKey=ebe7fae3f40b431dab2335358eab0c38&excludeCuisine="
+                                    + String.join(",", trueDietFilters) + "&excludeIngredients="
+                                    + String.join(",", trueAllergyFilters));
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -133,7 +142,7 @@ public class FiltersFragment extends Fragment {
         binding = null;
     }
 
-    public void GetRequest(String url) throws IOException{
+    public void GetRequest(String url) throws IOException {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
                 .url(url)
@@ -148,11 +157,26 @@ public class FiltersFragment extends Fragment {
 
                     @Override
                     public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+
                         String res = response.body().string();
                         System.out.println(res);
+
+                        // try {
+                        //     JSONParser parser = new JSONParser();
+                        //     JSONObject json = (JSONObject) parser.parse(response.body().string());
+                        //     System.out.println("success");
+                        // } catch (Exception e) {
+
+                        // }
+
+                        // SharedPreferences recipes = getActivity().getSharedPreferences("recipes",
+                        // Context.MODE_PRIVATE);
+                        // SharedPreferences.Editor editor = recipes.edit();
+                        // editor.putString("recipes", res);
+                        // editor.apply();
+
                     }
                 });
     }
-
 
 }

@@ -3,6 +3,7 @@
     <color name="rg_red_1">#FF6767</color>
     <color name="rg_blue_1">#29E1FF</color>
     <color name="rg_blue_2">#5BCCDE</color>
+    <color name="rg_backgrond">#FFFFFF</color>
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
