@@ -21,6 +21,7 @@ public class IngredientViewHolder extends RecyclerView.ViewHolder{
         //ingredientName = (TextView) itemView.findViewById();
 
         ingredientAmount = (TextView) itemView.findViewById(R.id.ing_amount);
+        ingredientUnit = (TextView) itemView.findViewById(R.id.ing_unit);
 
         view = itemView;
     }

@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 
 import com.example.recipegenius.R;
 import com.example.recipegenius.ui.ingredient.IngredientViewModel;
+import com.example.recipegenius.ui.ingredient.MeasureUnit;
 import com.example.recipegenius.ui.myrecipes.ClickListener;
 import com.example.recipegenius.ui.myrecipes.RecipeAdapter;
 import com.example.recipegenius.ui.myrecipes.RecipeObject;
@@ -46,6 +47,9 @@ public class InventoryFragment extends Fragment {
 
             inventory.addIngredient("Salt",0.5);
             inventory.addIngredient("Potato",500);
+            inventory.addIngredient("Oil",500, MeasureUnit.MILLILITER);
+            inventory.addIngredient("Chicken",0.2, MeasureUnit.POUND);
+            inventory.addIngredient("Carrot",0.1, MeasureUnit.POUND);
 
             ClickListener listener = new ClickListener() {
                 @Override
