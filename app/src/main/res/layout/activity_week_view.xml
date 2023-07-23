@@ -12,7 +12,7 @@
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Back Home"
+        android:text="Back"
         android:onClick="backWeekHome"/>
 
     <LinearLayout
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/back"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:background="@null"
             android:textStyle="bold"
             android:onClick="previousWeekAction"
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/forward"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:background="@null"
             android:textStyle="bold"
             android:onClick="nextWeekAction"
@@ -137,7 +137,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Event"
-        android:textColor="@color/blue"
+        android:textColor="@color/black"
         android:background="@null"
         android:textStyle="bold"
         android:onClick="newEventAction"
