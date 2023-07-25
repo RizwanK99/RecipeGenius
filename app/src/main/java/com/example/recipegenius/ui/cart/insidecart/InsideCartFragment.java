@@ -44,6 +44,8 @@ public class InsideCartFragment extends Fragment {
         recyclerView = view.findViewById(R.id.inside_cart_list);
 
         inventory.add(new CartIngredientModel("AAA Steak",2, MeasureUnit.POUND,40));
+        inventory.add(new CartIngredientModel("Brocolli",1,MeasureUnit.OUNCE,12));
+        inventory.add(new CartIngredientModel("Yam",2,MeasureUnit.OUNCE,20));
 
         ClickListener listener = new ClickListener() {
             @Override

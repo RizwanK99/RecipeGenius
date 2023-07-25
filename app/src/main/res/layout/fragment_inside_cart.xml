@@ -15,9 +15,42 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Walmart via Instacart"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/inside_cart_list"
         android:layout_width="match_parent"
-        android:layout_height="605dp" />
+        android:layout_height="557dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:text="Total: $72.00 + $5 Delivery"
+            android:textAlignment="textStart"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Order" />
+    </LinearLayout>
 
 </LinearLayout>
