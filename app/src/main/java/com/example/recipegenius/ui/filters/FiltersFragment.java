@@ -19,8 +19,12 @@ import androidx.navigation.Navigation;
 
 import com.example.recipegenius.R;
 import com.example.recipegenius.databinding.FragmentFiltersBinding;
+import com.example.recipegenius.ui.myrecipes.RecipeObject;
+
+import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -45,6 +49,7 @@ public class FiltersFragment extends Fragment {
     ListView allergyListView;
     ArrayList<String> allergyList;
     ArrayAdapter<String> allergyAdapter;
+    Context context;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -54,6 +59,8 @@ public class FiltersFragment extends Fragment {
         View root = binding.getRoot();
 
         binding.setViewModel(filtersViewModel);
+
+        context = getContext();
 
         // filters
         SharedPreferences dietFilters = getActivity().getSharedPreferences("dietFilters", Context.MODE_PRIVATE);
@@ -120,10 +127,13 @@ public class FiltersFragment extends Fragment {
                 }
 
                 try {
+                    // just 15 recipes for testing
                     GetRequest(
                             "https://api.spoonacular.com/recipes/complexSearch?apiKey=ebe7fae3f40b431dab2335358eab0c38&excludeCuisine="
                                     + String.join(",", trueDietFilters) + "&excludeIngredients="
-                                    + String.join(",", trueAllergyFilters));
+                                    + String.join(",", trueAllergyFilters)
+                                    + "&number=20&instructionsRequired=true&addRecipeInformation=true&fillIngredients=true");
+
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -152,31 +162,67 @@ public class FiltersFragment extends Fragment {
                 .enqueue(new Callback() {
                     @Override
                     public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                        e.printStackTrace();
+                        System.out.println("There was an issue reaching the API, please try again later.");
                     }
 
                     @Override
                     public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                        try {
+                            JSONObject obj = new JSONObject(response.body().string());
+                            JSONArray arr = obj.getJSONArray("results");
+                            ArrayList<RecipeObject> recipeList = new ArrayList<RecipeObject>();
+                            System.out.println("API response:");
+                            System.out.println(arr.length());
+                            SharedPreferences arrLen = context.getSharedPreferences("numRecipes",
+                                    Context.MODE_PRIVATE);
+                            SharedPreferences.Editor e = arrLen.edit();
+                            e.putInt("len", arr.length());
+                            e.apply();
+                            for (int i = 0; i < arr.length(); ++i) {
+                                JSONArray ingrArray = arr.getJSONObject(i).getJSONArray("extendedIngredients");
+                                ArrayList<String> ingrList = new ArrayList<String>();
+                                for (int j = 0; j < ingrArray.length(); j++) {
+                                    ingrList.add(ingrArray.getJSONObject(j).getString("original"));
+                                }
+                                String[] ingredients = ingrList.toArray(new String[ingrArray.length()]);
 
-                        String res = response.body().string();
-                        System.out.println(res);
+                                JSONArray instrArray = arr.getJSONObject(i).getJSONArray("analyzedInstructions")
+                                        .getJSONObject(0).getJSONArray("steps");
+                                ArrayList<String> stepList = new ArrayList<String>();
+                                for (int j = 0; j < instrArray.length(); j++) {
+                                    stepList.add(instrArray.getJSONObject(j).getString("step"));
+                                }
+                                String[] steps = stepList.toArray(new String[instrArray.length()]);
 
-                        // try {
-                        //     JSONParser parser = new JSONParser();
-                        //     JSONObject json = (JSONObject) parser.parse(response.body().string());
-                        //     System.out.println("success");
-                        // } catch (Exception e) {
+                                JSONArray tagArray = arr.getJSONObject(i).getJSONArray("diets");
+                                ArrayList<String> tagList = new ArrayList<String>();
+                                for (int j = 0; j < tagArray.length(); j++) {
+                                    tagList.add(tagArray.getString(j));
+                                }
+                                String[] tags = tagList.toArray(new String[tagArray.length()]);
 
-                        // }
-
-                        // SharedPreferences recipes = getActivity().getSharedPreferences("recipes",
-                        // Context.MODE_PRIVATE);
-                        // SharedPreferences.Editor editor = recipes.edit();
-                        // editor.putString("recipes", res);
-                        // editor.apply();
-
+                                RecipeObject recipeObject = new RecipeObject(
+                                        arr.getJSONObject(i).getString("title"),
+                                        ingredients,
+                                        steps,
+                                        tags,
+                                        arr.getJSONObject(i).getString("image"));
+                                recipeList.add(recipeObject);
+                                // TODO: store recipe object.
+                                SharedPreferences currentRecipe = context.getSharedPreferences("recipe-" + i,
+                                        Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = currentRecipe.edit();
+                                Gson gson = new Gson();
+                                String json = gson.toJson(recipeObject);
+                                editor.putString("recipe", json);
+                                editor.apply();
+                                System.out.println("recipe: ");
+                                System.out.println(json);
+                            }
+                        } catch (JSONException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
                 });
     }
-
 }

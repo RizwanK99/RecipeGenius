@@ -34,7 +34,7 @@
             app:key="notifications"
             app:title="Enable message notifications"
             android:icon="@drawable/notifications"
-            android:id="@+id/notificationsPreferance"
+            android:id="@+id/notificationsPreference"
             />
 
     </PreferenceCategory>
@@ -44,9 +44,12 @@
         app:title="Enable Hands Free Mode">
 
         <SwitchPreferenceCompat
-            app:key="handsfree"
+            app:key="HandsFree"
+            defaultValue="true"
             app:title="Enable hands free"
-            android:icon="@drawable/microphone"/>
+            android:icon="@drawable/microphone"
+            android:id="@+id/handsfreePreference"
+            />
 
     </PreferenceCategory>
 
@@ -63,7 +66,7 @@
     <PreferenceCategory
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="Securtiy">
+        android:title="Security">
 
         <SwitchPreference
             android:defaultValue="false"
