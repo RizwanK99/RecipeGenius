@@ -46,8 +46,18 @@ public class CartFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.order_cart_list);
 
-        inventory.add(new OrderCartModel("Walmart","Instacart"));
-        inventory.add(new OrderCartModel("Sobey's","Uber"));
+        inventory.add(new OrderCartModel("Cart 1","Walmart","Instacart"));
+
+        inventory.get(0).addIngredient("AAA Steak",2,MeasureUnit.POUND,40);
+        inventory.get(0).addIngredient("Brolloci",1,MeasureUnit.OUNCE,12);
+        inventory.get(0).addIngredient("Yam",2,MeasureUnit.OUNCE,20);
+
+        inventory.add(new OrderCartModel("Cart 2","Sobey's","Uber"));
+
+        inventory.get(1).addIngredient("Greek Yogurt",500,MeasureUnit.GRAM,8);
+        inventory.get(1).addIngredient("Raspberry",300,MeasureUnit.GRAM,18);
+        inventory.get(1).addIngredient("Maple Syrup",1000,MeasureUnit.MILLILITER,25);
+        inventory.get(1).addIngredient("Sprinkles",50,MeasureUnit.GRAM,10);
 
         ClickListener listener = new ClickListener() {
             @Override
