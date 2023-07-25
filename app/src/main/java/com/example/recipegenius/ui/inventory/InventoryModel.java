@@ -1,12 +1,20 @@
 package com.example.recipegenius.ui.inventory;
 
-import com.example.recipegenius.ui.cart.CartIngredientModel;
+import android.graphics.LinearGradient;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.example.recipegenius.ui.ingredient.IngredientModel;
+import com.example.recipegenius.ui.ingredient.IngredientViewModel;
 import com.example.recipegenius.ui.ingredient.MeasureUnit;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class InventoryModel extends HashMap<String, IngredientModel> {
 
@@ -29,17 +37,6 @@ public class InventoryModel extends HashMap<String, IngredientModel> {
             IngredientModel ing = this.get(name);
             ing.addQuantity(amount,unit);
             this.put(name,ing);
-        }
-    }
-
-    public void addIngredient(CartIngredientModel ing){
-        if(!this.containsKey(ing.name)){
-            this.put(ing.name, new CartIngredientModel(ing.name, ing.quantity, ing.unit, ing.price, ing.store));
-        }
-        else {
-            IngredientModel olding = this.get(ing.name);
-            olding.addQuantity(ing.quantity,ing.unit);
-            this.put(ing.name,ing);
         }
     }
 
