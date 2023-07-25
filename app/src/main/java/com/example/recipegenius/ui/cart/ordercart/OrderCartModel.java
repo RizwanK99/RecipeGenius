@@ -13,7 +13,8 @@ public class OrderCartModel {
 
     private InventoryModel<CartIngredientModel> ingredients = new InventoryModel();
 
-    public OrderCartModel(String store, String service){
+    public OrderCartModel(String name, String store, String service){
+        this.name = name;
         this.store = store;
         this.service = service;
     }
