@@ -1,4 +1,4 @@
-package com.example.recipegenius.ui.cart;
+package com.example.recipegenius.ui.cart.ordercart;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.recipegenius.R;
-import com.example.recipegenius.ui.ingredient.IngredientViewModel;
 
 public class OrderCartFragment extends Fragment {
 

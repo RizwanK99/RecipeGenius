@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/rg_blue_2"
+    android:background="@color/rg_backgrond"
     tools:context=".ui.inventory.InventoryFragment">
 
     <LinearLayout

@@ -1,4 +1,4 @@
-package com.example.recipegenius.ui.cart;
+package com.example.recipegenius.ui.cart.ordercart;
 
 import android.view.View;
 import android.widget.TextView;

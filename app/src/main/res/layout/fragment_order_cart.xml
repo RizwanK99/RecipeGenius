@@ -5,7 +5,7 @@
     android:id="@+id/order_cart_card"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    tools:context=".ui.cart.OrderCartFragment">
+    tools:context=".ui.cart.ordercart.OrderCartFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
