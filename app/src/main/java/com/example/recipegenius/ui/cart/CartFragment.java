@@ -46,6 +46,8 @@ public class CartFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.order_cart_list);
 
+        inventory.clear();
+
         inventory.add(new OrderCartModel("Cart 1","Walmart","Instacart"));
 
         inventory.get(0).addIngredient("AAA Steak",2,MeasureUnit.POUND,40);
