@@ -60,7 +60,7 @@ public class CartAdapter extends RecyclerView.Adapter<OrderCartViewHolder>{
             @Override
             public void onClick(View view) {
 
-                Navigation.findNavController(view).navigate(R.id.navigation_inventory);
+                Navigation.findNavController(view).navigate(R.id.navigation_inside_cart);
             }
         });
     }

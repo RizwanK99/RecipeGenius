@@ -69,4 +69,9 @@
         android:name="com.example.recipegenius.ui.cart.CartFragment"
         android:label="Carts"
         tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/navigation_inside_cart"
+        android:name="com.example.recipegenius.ui.cart.insidecart.InsideCartFragment"
+        android:label="fragment_inside_cart"
+        tools:layout="@layout/fragment_inside_cart" />
 </navigation>

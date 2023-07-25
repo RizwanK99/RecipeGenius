@@ -1,4 +1,4 @@
-package com.example.recipegenius.ui.cart.ordercart;
+package com.example.recipegenius.ui.cart.insidecart;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -15,30 +15,35 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.recipegenius.R;
-import com.example.recipegenius.ui.cart.CartAdapter;
 import com.example.recipegenius.ui.cart.CartViewModel;
+import com.example.recipegenius.ui.cart.ordercart.CartIngredientModel;
+import com.example.recipegenius.ui.ingredient.MeasureUnit;
 import com.example.recipegenius.ui.myrecipes.ClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderCartFragment extends Fragment {
+public class InsideCartFragment extends Fragment {
 
-    private OrderCartViewModel mViewModel;
+    private InsideCartViewModel mViewModel;
     private CartViewModel cartViewModel;
     private RecyclerView recyclerView;
-    private CartAdapter adapter;
+    private InsideCartAdapter adapter;
+    private List<CartIngredientModel> inventory = new ArrayList<>();
 
-    public static OrderCartFragment newInstance() {
-        return new OrderCartFragment();
+    public static InsideCartFragment newInstance() {
+        return new InsideCartFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_cart, container, false);
+        View view = inflater.inflate(R.layout.fragment_inside_cart, container, false);
 
+        recyclerView = view.findViewById(R.id.inside_cart_list);
+
+        inventory.add(new CartIngredientModel("AAA Steak",2, MeasureUnit.POUND,40));
 
         ClickListener listener = new ClickListener() {
             @Override
@@ -48,14 +53,17 @@ public class OrderCartFragment extends Fragment {
             }
         };
 
+        adapter = new InsideCartAdapter(inventory, listener, getContext());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(adapter);
         return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(OrderCartViewModel.class);
-
+        mViewModel = new ViewModelProvider(this).get(InsideCartViewModel.class);
+        // TODO: Use the ViewModel
     }
 
 }
