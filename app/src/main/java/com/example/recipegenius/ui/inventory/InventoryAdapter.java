@@ -54,7 +54,6 @@ public class InventoryAdapter extends RecyclerView.Adapter<IngredientViewHolder>
 
     @Override
     public int getItemCount() {
-        Log.d("Size",String.valueOf(list.size()+1));
         return list.size();
     }
 }

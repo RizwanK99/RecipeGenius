@@ -1,4 +1,4 @@
-package com.example.recipegenius.ui;
+package com.example.recipegenius.ui.cart;
 
 import androidx.lifecycle.ViewModel;
 
