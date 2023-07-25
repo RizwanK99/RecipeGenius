@@ -27,6 +27,7 @@ public class CartFragment extends Fragment {
     private CartViewModel cartViewModel;
     private RecyclerView recyclerView;
     private CartAdapter adapter;
+    private CartViewModel orderCart = new CartViewModel();
     private InventoryModel inventory = new InventoryModel();
 
     public static CartFragment newInstance() {
@@ -39,6 +40,7 @@ public class CartFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
 
         recyclerView = view.findViewById(R.id.order_cart_list);
+
 
         inventory.addIngredient("Salt",0.5);
         inventory.addIngredient("Potato",500);
