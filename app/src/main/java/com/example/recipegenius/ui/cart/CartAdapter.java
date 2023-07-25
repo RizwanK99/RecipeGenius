@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.recipegenius.R;
+import com.example.recipegenius.ui.cart.ordercart.OrderCartModel;
 import com.example.recipegenius.ui.cart.ordercart.OrderCartViewHolder;
 import com.example.recipegenius.ui.ingredient.IngredientModel;
 import com.example.recipegenius.ui.myrecipes.ClickListener;
@@ -18,11 +19,11 @@ import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<OrderCartViewHolder>{
 
-    List<IngredientModel> list = Collections.emptyList();
+    List<OrderCartModel> list = Collections.emptyList();
     Context context;
     ClickListener listener;
 
-    public CartAdapter(List<IngredientModel> list, ClickListener listener, Context context) {
+    public CartAdapter(List<OrderCartModel> list, ClickListener listener, Context context) {
         this.list = list;
         this.listener = listener;
         this.context = context;
@@ -46,8 +47,8 @@ public class CartAdapter extends RecyclerView.Adapter<OrderCartViewHolder>{
     public void onBindViewHolder(@NonNull OrderCartViewHolder holder, int position) {
         //int index = holder.getAdapterPosition();
         holder.ingredientName.setText(list.get(position).name);
-        holder.ingredientAmount.setText(String.valueOf(list.get(position).quantity));
-        holder.ingredientUnit.setText(list.get(position).unit.toString());
+        holder.ingredientAmount.setText(list.get(position).store);
+        holder.ingredientUnit.setText(list.get(position).service);
     }
 
     @Override
