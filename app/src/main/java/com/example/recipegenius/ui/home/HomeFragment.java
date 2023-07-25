@@ -140,7 +140,7 @@ public class HomeFragment extends Fragment {
 
         try {
             // just 15 recipes for testing
-           String url =
+            String url =
                     "https://api.spoonacular.com/recipes/complexSearch?apiKey=ebe7fae3f40b431dab2335358eab0c38&excludeCuisine="
                             + String.join(",", trueDietFilters) + "&excludeIngredients="
                             + String.join(",", trueAllergyFilters)
