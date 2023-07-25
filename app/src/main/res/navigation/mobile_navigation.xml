@@ -72,6 +72,6 @@
     <fragment
         android:id="@+id/navigation_inside_cart"
         android:name="com.example.recipegenius.ui.cart.insidecart.InsideCartFragment"
-        android:label="fragment_inside_cart"
+        android:label="Order Cart"
         tools:layout="@layout/fragment_inside_cart" />
 </navigation>
