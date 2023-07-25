@@ -1,5 +1,5 @@
 |    Date    | Cindy  | Garrick | Kevin  | Matthew | Rizwan | Vaibhav |           Task            |
-| :--------: | :----: | :-----: | :----: | :-----: | :----: | :-----: | :-----------------------: |
+| :--------: | :----: | :-----: | :----: |:-------:| :----: | :-----: | :-----------------------: |
 | 2023/05/27 |        |         |        | 1.00 h  | 1.50 h | 1.50 h  |    Brainstorming Ideas    |
 | 2023/05/28 | 3.00 h | 3.00 h  | 3.00 h | 3.00 h  | 3.00 h | 3.00 h  |     Demo Presentation     |
 | 2023/06/01 | 6.00 h | 1.50 h  | 2.00 h | 1.00 h  | 1.50 h | 2.00 h  |   D1: Project Proposal    |
@@ -41,5 +41,5 @@
 | 2023/07/20 | 1.25 h |         |        |         | 0.50 h |         |    D5: Design Patterns    |
 | 2023/07/21 |        |         | 3.00 h | 4.00 h  | 3.00 h |         |   Implementing Features   |
 | 2023/07/21 |        |         | 1.00 h |         | 1.00 h | 2.00 h  |    D5: Design Patterns    |
-| 2023/07/22 |        |         | 6.50 h |         | 4.00 h |         |   Implementing Features   |
-| 2023/07/23 |        |         | 6.50 h |         |        |         |   Implementing Features   |
+| 2023/07/22 |        |         | 6.50 h | 3.00 h  | 4.00 h |         |   Implementing Features   |
+| 2023/07/23 |        |         | 6.50 h | 4.00 h  |        |         |   Implementing Features   |
