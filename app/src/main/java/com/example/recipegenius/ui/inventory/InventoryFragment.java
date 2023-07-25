@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.recipegenius.R;
+import com.example.recipegenius.ui.ingredient.IngredientModel;
 import com.example.recipegenius.ui.ingredient.IngredientViewModel;
 import com.example.recipegenius.ui.ingredient.MeasureUnit;
 import com.example.recipegenius.ui.myrecipes.ClickListener;
@@ -32,7 +33,7 @@ public class InventoryFragment extends Fragment {
     private InventoryViewModel inventoryViewModel;
     private RecyclerView recyclerView;
     private InventoryAdapter adapter;
-    private InventoryModel inventory = new InventoryModel();
+    private InventoryModel<IngredientModel> inventory = new InventoryModel();
 
     public static InventoryFragment newInstance() {
         return new InventoryFragment();

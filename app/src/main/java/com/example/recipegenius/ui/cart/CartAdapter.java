@@ -49,8 +49,8 @@ public class CartAdapter extends RecyclerView.Adapter<OrderCartViewHolder>{
         holder.orderCartName.setText(list.get(position).name);
         holder.orderCartStore.setText(list.get(position).store);
         holder.orderCartService.setText(list.get(position).service);
-        holder.orderCartPrice.setText(list.get(position).store);
-        holder.orderCartItemCount.setText(list.get(position).service);
+        holder.orderCartPrice.setText(String.valueOf(list.get(position).getCost()));
+        holder.orderCartItemCount.setText(String.valueOf(list.get(position).getCartSize()));
     }
 
     @Override
