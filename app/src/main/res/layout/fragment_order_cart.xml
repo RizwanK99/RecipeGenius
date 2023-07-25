@@ -13,8 +13,7 @@
         android:layout_width="310dp"
         android:layout_height="match_parent"
         android:layout_marginLeft="50dp"
-        android:background="#C0DAE6"
-        app:cardBackgroundColor="@color/rg_blue_1"
+        app:cardBackgroundColor="@color/rg_red_1"
         app:cardCornerRadius="6dp">
 
         <TableLayout
