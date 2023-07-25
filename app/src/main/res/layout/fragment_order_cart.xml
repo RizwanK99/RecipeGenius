@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:layout_marginBottom="30dp"
+    android:layout_weight="2"
     tools:context=".ui.cart.ordercart.OrderCartFragment">
 
     <androidx.cardview.widget.CardView
@@ -16,78 +17,82 @@
         app:cardBackgroundColor="@color/rg_blue_1"
         app:cardCornerRadius="3dp">
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_weight="1">
 
-            <TableLayout
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_height="match_parent">
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/ordercart_name"
+                    android:layout_width="143dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/ordercart_name"
-                        android:layout_width="143dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/ordercart_store"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:textSize="20sp" />
+            </TableRow>
 
-                    <TextView
-                        android:id="@+id/ordercart_store"
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        android:textAlignment="textEnd"
-                        android:textSize="20sp" />
-                </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/ordercart_itemcount"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="TextView"
+                    android:textAlignment="textEnd" />
 
-                    <TextView
-                        android:id="@+id/ordercart_itemcount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="TextView" />
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="Items"
+                    android:textAlignment="center" />
 
-                    <TextView
-                        android:id="@+id/ordercart_price"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="TextView" />
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="66dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="$"
+                    android:textAlignment="textEnd" />
 
-                    <TextView
-                        android:id="@+id/ordercart_service"
-                        android:layout_width="200dp"
-                        android:layout_height="87dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        android:text="TextView"
-                        android:textAlignment="textEnd"
-                        android:textSize="20sp" />
-                </TableRow>
+                <TextView
+                    android:id="@+id/ordercart_price"
+                    android:layout_width="119dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textAlignment="textStart" />
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/ordercart_service"
+                    android:layout_width="150dp"
+                    android:layout_height="87dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textAlignment="textEnd"
+                    android:textSize="20sp" />
+            </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </TableLayout>
-
-        </LinearLayout>
+        </TableLayout>
 
     </androidx.cardview.widget.CardView>
 </FrameLayout>
