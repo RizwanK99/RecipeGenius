@@ -46,9 +46,11 @@ public class CartAdapter extends RecyclerView.Adapter<OrderCartViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull OrderCartViewHolder holder, int position) {
         //int index = holder.getAdapterPosition();
-        holder.ingredientName.setText(list.get(position).name);
-        holder.ingredientAmount.setText(list.get(position).store);
-        holder.ingredientUnit.setText(list.get(position).service);
+        holder.orderCartName.setText(list.get(position).name);
+        holder.orderCartStore.setText(list.get(position).store);
+        holder.orderCartService.setText(list.get(position).service);
+        holder.orderCartPrice.setText(list.get(position).store);
+        holder.orderCartItemCount.setText(list.get(position).service);
     }
 
     @Override

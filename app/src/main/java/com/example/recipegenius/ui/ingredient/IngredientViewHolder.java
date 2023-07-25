@@ -1,13 +1,11 @@
 package com.example.recipegenius.ui.ingredient;
 
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.recipegenius.R;
-import com.squareup.picasso.Picasso;
 
 public class IngredientViewHolder extends RecyclerView.ViewHolder{
     public TextView ingredientName;
@@ -17,11 +15,11 @@ public class IngredientViewHolder extends RecyclerView.ViewHolder{
 
     public IngredientViewHolder(View itemView)  {
         super(itemView);
-        ingredientName = (TextView) itemView.findViewById(R.id.ing_name);
+        ingredientName = (TextView) itemView.findViewById(R.id.ordercart_name);
         //ingredientName = (TextView) itemView.findViewById();
 
-        ingredientAmount = (TextView) itemView.findViewById(R.id.ing_amount);
-        ingredientUnit = (TextView) itemView.findViewById(R.id.ing_unit);
+        ingredientAmount = (TextView) itemView.findViewById(R.id.ordercart_store);
+        ingredientUnit = (TextView) itemView.findViewById(R.id.ordercart_service);
 
         view = itemView;
     }

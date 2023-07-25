@@ -8,18 +8,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.recipegenius.R;
 
 public class OrderCartViewHolder extends RecyclerView.ViewHolder{
-    public TextView ingredientName;
-    public TextView ingredientAmount;
-    public TextView ingredientUnit;
+    public TextView orderCartName;
+    public TextView orderCartStore;
+    public TextView orderCartService;
+    public TextView orderCartPrice;
+    public TextView orderCartItemCount;
     View view;
 
     public OrderCartViewHolder(View itemView)  {
         super(itemView);
-        ingredientName = (TextView) itemView.findViewById(R.id.ing_name);
+        orderCartName = (TextView) itemView.findViewById(R.id.ordercart_name);
         //ingredientName = (TextView) itemView.findViewById();
 
-        ingredientAmount = (TextView) itemView.findViewById(R.id.ing_amount);
-        ingredientUnit = (TextView) itemView.findViewById(R.id.ing_unit);
+        orderCartStore = (TextView) itemView.findViewById(R.id.ordercart_store);
+        orderCartService = (TextView) itemView.findViewById(R.id.ordercart_service);
+        orderCartPrice = (TextView) itemView.findViewById(R.id.ordercart_price);
+        orderCartItemCount = (TextView) itemView.findViewById(R.id.ordercart_itemcount);
 
         view = itemView;
     }
