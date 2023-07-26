@@ -2,6 +2,7 @@ package com.example.recipegenius;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -41,5 +42,8 @@ public class EventEditActivity extends AppCompatActivity {
         Event newEvent = new Event(eventName,CalendarUtils.selectedDate,time);
         Event.eventsList.add(newEvent);
         finish();
+    }
+    public void backEventHome(View view) {
+        startActivity(new Intent(this,WeekViewActivity.class));
     }
 }
