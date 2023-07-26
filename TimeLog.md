@@ -43,3 +43,4 @@
 | 2023/07/21 |        |         | 1.00 h |         | 1.00 h | 2.00 h  |    D5: Design Patterns    |
 | 2023/07/22 |        |         | 6.50 h | 3.00 h  | 4.00 h |         |   Implementing Features   |
 | 2023/07/23 |        |         | 6.50 h | 4.00 h  |        |         |   Implementing Features   |
+| 2023/07/25 | 2.50 h |         |        |         |        |         |   D6: Final Presentation  |
