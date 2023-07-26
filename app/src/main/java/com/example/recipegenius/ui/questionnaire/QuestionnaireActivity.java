@@ -42,11 +42,11 @@ public class QuestionnaireActivity extends AppCompatActivity {
         tabIndicator = findViewById(R.id.tab_indicator);
         btnAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_animation);
 
-//        if (restorePrefData()) {
-//            Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
-//            startActivity(mainActivity);
-//            finish();
-//        }
+        if (restorePrefData()) {
+            Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(mainActivity);
+            finish();
+        }
 
         mAdapter = new QuestionnaireFragmentStateAdapter(this);
 
