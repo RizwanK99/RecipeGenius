@@ -18,16 +18,16 @@
 | 2023/07/13 | 2.50 h | 4.00 h  | 4.00 h | 1.00 h  | 3.50 h | 3.00 h  |    D4: Architectural Styles     |
 | 2023/07/16 | 3.50 h |         |        |         |        | 2.00 h  |      Implementing Features      |
 | 2023/07/17 | 9.50 h |         | 2.00 h | 2.50 h  | 3.00 h | 5.00 h  |      Implementing Features      |
-| 2023/07/17 |        |         | 2.00 h |         | 2.00 h |         |       D5: Design Patterns       |
-| 2023/07/18 | 3.00 h |         | 9.50 h |  4.00h  | 8.00 h | 10.00 h |      Implementing Features      |
+| 2023/07/17 |        | 2.00 h  | 2.00 h |         | 2.00 h |         |       D5: Design Patterns       |
+| 2023/07/18 | 3.00 h | 7.00 h  | 9.50 h |  4.00h  | 8.00 h | 10.00 h |      Implementing Features      |
 | 2023/07/18 | 2.00 h |         |        |         |        |         |       D5: Design Patterns       |
-| 2023/07/19 |        |         | 0.50 h | 1.00 h  |        | 4.00 h  |       D5: Design Patterns       |
+| 2023/07/19 |        | 0.50 h  | 0.50 h | 1.00 h  |        | 4.00 h  |       D5: Design Patterns       |
 | 2023/07/19 |        |         | 5.00 h | 3.00 h  | 2.00 h |         |      Implementing Features      |
 | 2023/07/20 | 1.25 h | 0.50 h  |        |         | 0.50 h |         |       D5: Design Patterns       |
 | 2023/07/21 |        |         | 3.00 h | 4.00 h  | 3.00 h |         |      Implementing Features      |
 | 2023/07/21 |        |         | 1.00 h |         | 1.00 h | 2.00 h  |       D5: Design Patterns       |
 | 2023/07/22 |        | 7.00 h  | 6.50 h | 3.00 h  | 4.00 h |         |      Implementing Features      |
-| 2023/07/23 |        |         | 6.50 h | 4.00 h  |        |         |      Implementing Features      |
+| 2023/07/23 |        | 4.00 h  | 6.50 h | 4.00 h  |        |         |      Implementing Features      |
 | 2023/07/24 |        |         |        |         | 2.00 h |         |      Implementing Features      |
 | 2023/07/24 |        |         |        |         | 4.00 h |         |   D6: Arch + Design Document    |
 | 2023/07/24 | 1.50 h | 1.50 h  | 1.50 h | 1.50 h  | 1.50 h | 1.50 h  |     D6: Demo Video Planning     |
