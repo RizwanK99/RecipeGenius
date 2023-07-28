@@ -33,6 +33,7 @@
 | 2023/07/24 | 1.50 h | 1.50 h  | 1.50 h | 1.50 h  | 1.50 h | 1.50 h  |     D6: Demo Video Planning     |
 | 2023/07/25 | 2.50 h | 2.50 h  | 2.50 h | 2.50 h  | 2.50 h | 2.50 h  |    D6: Demo Video Recording     |
 | 2023/07/26 | 2.50 h | 2.50 h  | 4.00 h | 2.50 h  | 3.00 h | 3.50 h  |   D6: Arch + Design Document    |
-| 2023/07/27 | 2.50 h | 2.50 h  | 4.00 h | 2.50 h  | 5.00 h | 5.50 h  |   D6: Arch + Design Document    |
+| 2023/07/27 | 6.00 h | 2.50 h  | 4.00 h | 2.50 h  | 5.00 h | 5.50 h  |   D6: Arch + Design Document    |
+| 2023/07/28 | 5.50 h |         |        |         |        |         |   D6: Arch + Design Document    |
 
 
