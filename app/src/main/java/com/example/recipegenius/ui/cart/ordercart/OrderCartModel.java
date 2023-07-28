@@ -1,6 +1,5 @@
 package com.example.recipegenius.ui.cart.ordercart;
 
-import com.example.recipegenius.ui.ingredient.IngredientModel;
 import com.example.recipegenius.ui.ingredient.MeasureUnit;
 import com.example.recipegenius.ui.inventory.InventoryModel;
 

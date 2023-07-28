@@ -6,7 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.recipegenius.ui.cart.ordercart.CartIngredientModel;
-import com.example.recipegenius.ui.ingredient.IngredientModel;
+import com.example.recipegenius.ui.ingredient.IngredientFactory;
+import com.example.recipegenius.ui.ingredient.InventoryIngredientModel;
 import com.example.recipegenius.ui.ingredient.IngredientViewModel;
 import com.example.recipegenius.ui.ingredient.MeasureUnit;
 
@@ -21,10 +22,10 @@ public class InventoryModel<T> extends HashMap<String, T> {
 
     public void addIngredient(String name, double amount){
         if(!this.containsKey(name)){
-            this.put(name, (T) new IngredientModel(name, amount, MeasureUnit.GRAM));
+            this.put(name, (T) IngredientFactory.valueOf(name, amount, MeasureUnit.GRAM));
         }
         else {
-            IngredientModel ing = (IngredientModel) this.get(name);
+            InventoryIngredientModel ing = (InventoryIngredientModel) this.get(name);
             ing.addQuantity(amount,MeasureUnit.GRAM);
             this.put(name, (T) ing);
         }
@@ -32,10 +33,10 @@ public class InventoryModel<T> extends HashMap<String, T> {
 
     public void addIngredient(String name, double amount, MeasureUnit unit){
         if(!this.containsKey(name)){
-            this.put(name, (T) new IngredientModel(name, amount, unit));
+            this.put(name, (T) IngredientFactory.valueOf(name, amount, MeasureUnit.GRAM));
         }
         else {
-            IngredientModel ing = (IngredientModel) this.get(name);
+            InventoryIngredientModel ing = (InventoryIngredientModel) this.get(name);
             ing.addQuantity(amount,unit);
             this.put(name, (T) ing);
         }
@@ -43,11 +44,11 @@ public class InventoryModel<T> extends HashMap<String, T> {
 
     public void addIngredient(String name, double amount, MeasureUnit unit, double price){
         if(!this.containsKey(name)){
-            this.put(name, (T) new CartIngredientModel(name, amount, unit, price));
+            this.put(name, (T) IngredientFactory.valueOf(name, amount, MeasureUnit.GRAM, price));
         }
         else {
             CartIngredientModel ing = (CartIngredientModel) this.get(name);
-            ing.addQuantity(amount,unit);
+            ing.quantity = amount;
             this.put(name, (T) ing);
         }
     }
