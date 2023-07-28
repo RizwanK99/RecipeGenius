@@ -2,6 +2,7 @@ package com.example.recipegenius.ui.ingredient;
 
 public class InventoryIngredientModel extends IngredientFactory {
 
+    String expiryDate = "";
     //private static HashMap<String,IngredientViewModel> allIngredients;
 
     //Factory constructor (unused)
