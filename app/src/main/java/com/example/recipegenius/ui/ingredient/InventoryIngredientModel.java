@@ -1,10 +1,6 @@
 package com.example.recipegenius.ui.ingredient;
 
-public class IngredientModel {
-    public String name = "";
-    public double quantity = 0;
-    public boolean isLiquid = false;
-    public MeasureUnit unit = MeasureUnit.GRAM;
+public class InventoryIngredientModel extends IngredientFactory {
 
     //private static HashMap<String,IngredientViewModel> allIngredients;
 
@@ -25,10 +21,8 @@ public class IngredientModel {
     }*/
 
     //Normal constructor
-    public IngredientModel(String name, double amount, MeasureUnit unit){
-        this.name = name;
-        this.quantity = amount;
-        this.unit = unit;
+    public InventoryIngredientModel(String name, double amount, MeasureUnit unit){
+        super(name,amount,unit);
     }
 
     public double addQuantity(double amount, MeasureUnit unit){
