@@ -36,5 +36,5 @@
 | 2023/07/27 | 6.00 h | 5.00 h  | 4.00 h | 2.50 h  | 5.00 h | 5.50 h  |   D6: Arch + Design Document    |
 | 2023/07/28 | 6.50 h | 5.00 h  |        | 1.00 h  | 4.50 h | 3.50 h  |   D6: Arch + Design Document    |
 | 2023/07/31 | 4.25 h | 2.00 h  | 2.00 h |         | 2.50 h | 2.50 h  |     D7: Final Status Report     |
-| 2023/08/01 | 1.00 h |         |        |         |        |         |     D7: Final Status Report     |
+| 2023/08/01 | 1.00 h |         | 1.00 h |         |        |         |     D7: Final Status Report     |
 
